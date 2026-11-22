@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Design tokens: defined once, used by every page. Dark values follow the OS setting unless
+   the page sets data-theme explicitly. */
+:root {
+  --canvas: #f6f6f4;
+  --surface: #ffffff;
+  --line: #d6d6d0;
+  --ink: #1c1c1a;
+  --ink-muted: #5c5c56;
+  --accent: #4338ca;
+  --accent-ink: #ffffff;
+  --focus: #2563eb;
+  --success: #166534;
+  --success-soft: #dcfce7;
+  --warning: #854d0e;
+  --warning-soft: #fef9c3;
+  --danger: #991b1b;
+  --danger-soft: #fee2e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: #0f0f0e;
+    --surface: #181816;
+    --line: #34342f;
+    --ink: #ededea;
+    --ink-muted: #a3a39c;
+    --accent: #818cf8;
+    --accent-ink: #0f0f0e;
+    --focus: #93c5fd;
+    --success: #86efac;
+    --success-soft: #14532d;
+    --warning: #fde68a;
+    --warning-soft: #422006;
+    --danger: #fca5a5;
+    --danger-soft: #450a0a;
+  }
+}
+
+:root[data-theme="dark"] {
+  --canvas: #0f0f0e;
+  --surface: #181816;
+  --line: #34342f;
+  --ink: #ededea;
+  --ink-muted: #a3a39c;
+  --accent: #818cf8;
+  --accent-ink: #0f0f0e;
+  --focus: #93c5fd;
+  --success: #86efac;
+  --success-soft: #14532d;
+  --warning: #fde68a;
+  --warning-soft: #422006;
+  --danger: #fca5a5;
+  --danger-soft: #450a0a;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Visible focus for keyboard users on every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}

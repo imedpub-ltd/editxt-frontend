@@ -5,7 +5,7 @@ import { registry } from '../../../../lib/registry';
 
 /**
  * POST /api/review/pre-submission
- * Executes the sovereign Pre-Submission Deep Review capability (`review.deep_review_pre_submission`),
+ * Executes the Pre-Submission Deep Review capability (`review.deep_review_pre_submission`),
  * performing Dynamic Document Segmentation, Dynamic Compute Allocation, and parallel forensic checks.
  */
 export async function POST(request: Request) {

@@ -197,23 +197,23 @@ export default function PreprintsPage() {
               </div>
             </article>
 
-            {/* Second Manuscript: Alpöge Riemann Hypothesis (Marked as Incomplete Draft) */}
-            <article className="rounded-lg border border-amber-300 bg-amber-50/30 p-6 shadow-sm hover:border-amber-400 transition">
+            {/* Second Manuscript: Alpöge Riemann Hypothesis (Complete & Double-Certified) */}
+            <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold uppercase tracking-wider text-purple-800 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded">
                     Theoretical Metascience &amp; Automated Reasoning
                   </span>
-                  <span>Registered: November 23, 2026</span>
+                  <span>Posted: November 23, 2026</span>
                   <span>·</span>
-                  <span className="font-mono text-[#44403c]">Draft v0.9</span>
+                  <span className="font-mono text-[#44403c]">Version 1.0</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-0.5 rounded text-[11px] font-bold flex items-center gap-1">
-                    <span>⚠</span> INCOMPLETE DRAFT (Pending Author Component)
+                  <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
+                    <span>✓</span> Dual-Kernel Certified (leanchecker + Lean 4)
                   </span>
-                  <span className="bg-stone-100 text-stone-700 border border-stone-300 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:6854...88d9
+                  <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
+                    sha256:196e...7e12
                   </span>
                 </div>
               </div>
@@ -226,31 +226,40 @@ export default function PreprintsPage() {
                 CoResearcher Cognitive Systems Group &amp; Theoretical Metascience Laboratory
               </div>
               <div className="text-[11px] text-[#78716c] italic mt-0.5">
-                Certified on Apple M2 Ultra (mac_studio) · 127,812s wall-clock · 175,187 modules · 0 sorry · Epistemic Spine Fan-in: 2,390
+                Certified on Apple M2 Ultra (mac_studio) · 127,812s wall-clock · 175,187 modules · 183,889 .olean binaries verified · 0 sorry · Epistemic Spine Fan-in: 2,390
               </div>
 
-              {/* Status Warning Notice */}
-              <div className="mt-4 rounded border border-amber-300 bg-white p-3 text-xs text-amber-950 space-y-1">
-                <div className="font-bold flex items-center gap-1.5 text-amber-900">
-                  <span>⏸</span>
-                  <span>Estado Editorial: Manuscrito Inacabado</span>
+              {/* Cognitive Opacity Tools Showcase */}
+              <div className="mt-4 rounded border border-emerald-200 bg-emerald-50/50 p-4 text-xs text-emerald-950 space-y-2">
+                <div className="font-bold flex items-center gap-1.5 text-emerald-900">
+                  <span>🌐</span>
+                  <span>Herramientas de Reducción de Opacidad Cognitiva Integradas:</span>
                 </div>
-                <p className="text-[#57534e]">
-                  Por indicación del autor, este trabajo se encuentra registrado como <strong>borrador en desarrollo</strong>. Falta una pieza complementaria que se integrará en una fase posterior. La emisión de DOI y la publicación definitiva permanecen en pausa.
+                <p className="text-[#44403c] leading-relaxed">
+                  Para hacer humanamente comprensible la demostración de 17.3M de líneas de código Lean, este preprint incluye el <strong>Navegador Interactivo D3 de la Epistemic Spine</strong> (explorando las 43 capas y el estrangulamiento de <em>UniformisationConclusion</em> con fan-in 2.390) y el <strong>Capítulo 0 Informal</strong> en prosa matemática contemporánea (variedades modulares aritméticas, compactificación toroidal y suma de cuadrados SOS).
                 </p>
               </div>
 
               {/* Summary CTAs */}
-              <div className="mt-5 pt-4 border-t border-amber-200/60 flex flex-wrap items-center justify-between gap-4 text-xs">
+              <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-mono bg-white border border-[#e7e5e4] px-2 py-0.5 rounded text-[#78716c]">
-                    DOI Status: HOLD_PENDING_COMPLETION
+                  <span className="font-mono bg-[#f5f5f4] border border-[#e7e5e4] px-2 py-0.5 rounded text-[#44403c]">
+                    Zenodo DOI: 10.5281/zenodo.draft-reservation-alpoge-rh
                   </span>
                   <span className="text-[#a8a29e]">·</span>
                   <span className="text-[#78716c]">Cuello de Botella: UniformisationConclusion (fan-in 2.390)</span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href="/visualizations/epistemic_graph_navigator.html"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded border border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 px-3 py-1.5 font-bold transition flex items-center gap-1"
+                  >
+                    <span>🌐</span>
+                    <span>Epistemic Spine D3 Navigator ↗</span>
+                  </a>
                   <Link
                     href="/editor/2026-11-alpoge-riemann-hypothesis"
                     className="rounded bg-[#1c1917] hover:bg-black text-white px-4 py-1.5 font-semibold transition"

@@ -88,7 +88,8 @@ export default function Navbar({ currentJournal }: NavbarProps) {
             <Link href="/journals/ia" className={`hover:text-black ${currentJournal === 'ia' ? 'text-black font-bold' : ''}`}>IA (Multidisciplinary)</Link>
             <Link href="/journals/iamed" className={`hover:text-black ${currentJournal === 'iamed' ? 'text-black font-bold' : ''}`}>IAmed (Medicine)</Link>
             <Link href="/journals/ianeuro" className={`hover:text-black ${currentJournal === 'ianeuro' ? 'text-black font-bold' : ''}`}>IAneuro (Neurology)</Link>
-            <Link href="/about" className="hover:text-black">Publishing Ethics</Link>
+            <Link href="/editor/2026-11-pseudo-lof-dementia" className="hover:text-black font-semibold text-[#047857]">Living Editor</Link>
+            <Link href="/checkout/2026-11-pseudo-lof-dementia" className="hover:text-black text-xs text-[#78716c]">Gateway</Link>
           </nav>
         </div>
       </header>

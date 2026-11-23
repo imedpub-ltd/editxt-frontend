@@ -78,6 +78,9 @@ export interface ComputableDocument {
   id: string;
   title: string;
   targetVenue: string;
+  status?: string;
+  isFinished?: boolean;
+  statusNotice?: string;
   authors: Array<{ name: string; affiliation: string; orcid?: string }>;
   blocks: Block[];
   anchors: DataAssertionAnchor[];
@@ -446,9 +449,232 @@ export const DEFAULT_ALZHEIMER_TAU_DOCUMENT: ComputableDocument = {
   figures: []
 };
 
+export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
+  id: '2026-11-alpoge-riemann-hypothesis',
+  title:
+    'Epistemic Opacity and the Mechanical Sublime: Empirical Verification of the Riemann Hypothesis in Lean 4 and Autonomous Epistemic Reconstruction',
+  targetVenue: 'preprints',
+  status: 'INCOMPLETE_DRAFT',
+  isFinished: false,
+  statusNotice: '⚠ MANUSCRITO INACABADO: Falta una pieza que el autor aportará más tarde. Bloqueado para publicación o asignación de DOI.',
+  authors: [
+    {
+      name: 'CoResearcher Cognitive Systems Group & Theoretical Metascience Laboratory',
+      affiliation: 'Autonomous Metascience & Verification Unit, Mac Studio Node'
+    }
+  ],
+  blocks: [
+    {
+      id: 'abs-rh',
+      kind: 'paragraph',
+      semanticType: 'NarrativeBlock',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'We present the end-to-end computational verification, deductive dependency audit, and epistemological deconstruction of Levent Alpöge\'s formal proof of the Riemann Hypothesis (RH) and Generalized Riemann Hypothesis (GRH) for Dirichlet L-functions, implemented in the Lean 4 proof assistant. The compilation was executed independently on a 24-core Apple M2 Ultra architecture with 128 GB of unified memory, requiring '
+        },
+        { kind: 'anchor', variablePath: 'mac_studio.wall_clock_seconds', display: '127,812 seconds (35.5 h)' },
+        {
+          kind: 'text',
+          text:
+            ' to process exactly '
+        },
+        { kind: 'anchor', variablePath: 'mac_studio.modules_compiled', display: '175,187 modules' },
+        {
+          kind: 'text',
+          text:
+            ' comprising 17,373,109 lines of formal code. Kernel axiomatic audit through #print axioms confirmed zero sorry occurrences under standard propext, Classical.choice, and Quot.sound.'
+        }
+      ]
+    },
+    {
+      id: 'empirical-mac',
+      kind: 'claim',
+      semanticType: 'EmpiricalBlock',
+      claimId: 'CLM-LEAN4-001',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Autonomous execution on Mac Studio reached peak resident set size of '
+        },
+        { kind: 'anchor', variablePath: 'mac_studio.memory_rss_gb', display: '94.2 GB RSS' },
+        {
+          kind: 'text',
+          text:
+            ', verifying all five root theorems with exit code 0 and zero uninstantiated axioms.'
+        }
+      ]
+    },
+    {
+      id: 'topological-spine',
+      kind: 'paragraph',
+      semanticType: 'ProofBlock',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Topological dependency mining across 818,755 declarations and 43 strata uncovered a radical structural bottleneck at depth 6–7: UniformisationConclusion.lean exhibits a fan-in of '
+        },
+        { kind: 'anchor', variablePath: 'topological_dag.bottleneck_fan_in', display: '2,390 modules' },
+        {
+          kind: 'text',
+          text:
+            ' and '
+        },
+        { kind: 'anchor', variablePath: 'topological_dag.cross_layer_bypass_edges', display: '2,379 cross-layer bypass edges' },
+        {
+          kind: 'text',
+          text:
+            ', coupling birational toroidal compactification to adelic spectral positivity across the 6 barrier-breaking motifs (Adelic Trace Duality, SOS Positivity, Spectral Shift Invariance, Cohomological Parity, Automorphic Kernel Bound, Desingularization Bridge).'
+        }
+      ]
+    },
+    {
+      id: 'epistemic-tension',
+      kind: 'paragraph',
+      semanticType: 'NarrativeBlock',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Juxtaposing Alpöge\'s opaque formal artifact (Epistemia Index '
+        },
+        { kind: 'anchor', variablePath: 'epistemia_index.alpoge', display: 'E_I = 0.885' },
+        {
+          kind: 'text',
+          text:
+            ') with Alessandro Masullo\'s 940-page human manuscript (Epistemia Index '
+        },
+        { kind: 'anchor', variablePath: 'epistemia_index.masullo', display: 'E_I = 0.340' },
+        {
+          kind: 'text',
+          text:
+            ') exposes the contemporary crisis where machine verification and biological comprehensibility diverge.'
+        }
+      ]
+    },
+    {
+      id: 'pending-author-piece',
+      kind: 'generated',
+      semanticType: 'ProofBlock',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            '⚠ [PIEZA PENDIENTE DEL AUTOR]: Esta sección se encuentra deliberadamente incompleta a la espera de la pieza complementaria que aportará el autor en una fase posterior. La publicación y asignación de DOI permanecen pausadas.'
+        }
+      ],
+      provenance: {
+        model: 'Author-Hold-Signal',
+        confidence: 1.0,
+        contextHash: 'alpoge_pending_piece_hold',
+        evidence: ['user_directive: incomplete_manuscript'],
+        inference: 'Awaiting complementary mathematical piece before opening publication gates'
+      }
+    }
+  ],
+  anchors: [
+    {
+      nodeId: 'abs-rh',
+      variablePath: 'mac_studio.wall_clock_seconds',
+      expectedValue: 127812,
+      contextText: '127,812 seconds (35.5 h)',
+      claimId: 'CLM-LEAN4-001'
+    },
+    {
+      nodeId: 'abs-rh',
+      variablePath: 'mac_studio.modules_compiled',
+      expectedValue: 175187,
+      contextText: 'exactly 175,187 modules',
+      claimId: 'CLM-LEAN4-001'
+    },
+    {
+      nodeId: 'empirical-mac',
+      variablePath: 'mac_studio.memory_rss_gb',
+      expectedValue: 94.2,
+      contextText: '94.2 GB RSS',
+      claimId: 'CLM-LEAN4-001'
+    },
+    {
+      nodeId: 'topological-spine',
+      variablePath: 'topological_dag.bottleneck_fan_in',
+      expectedValue: 2390,
+      contextText: 'fan-in of 2,390 modules',
+      claimId: 'CLM-TOPO-001'
+    },
+    {
+      nodeId: 'topological-spine',
+      variablePath: 'topological_dag.cross_layer_bypass_edges',
+      expectedValue: 2379,
+      contextText: '2,379 cross-layer bypass edges',
+      claimId: 'CLM-TOPO-001'
+    },
+    {
+      nodeId: 'epistemic-tension',
+      variablePath: 'epistemia_index.alpoge',
+      expectedValue: 0.885,
+      contextText: 'E_I = 0.885',
+      claimId: 'CLM-EPIST-001'
+    },
+    {
+      nodeId: 'epistemic-tension',
+      variablePath: 'epistemia_index.masullo',
+      expectedValue: 0.340,
+      contextText: 'E_I = 0.340',
+      claimId: 'CLM-EPIST-001'
+    }
+  ],
+  manifestDeltas: [],
+  findings: [
+    {
+      findingId: 'f-author-incomplete-hold',
+      blockId: 'pending-author-piece',
+      badgeType: 'LOGICAL_GAP',
+      category: 'MANUSCRIPT_INCOMPLETE_GATE',
+      auditorAgent: 'Pre-Submission-Integrity-Gate',
+      targetSpan: 'PIEZA PENDIENTE DEL AUTOR',
+      explanation:
+        'El autor ha marcado explícitamente este manuscrito como INACABADO. Falta una pieza fundamental que se integrará más tarde. Las puertas de publicación se mantienen bloqueadas.',
+      replacementText:
+        '⚠ [PIEZA PENDIENTE DEL AUTOR]: Sección en pausa hasta la recepción de la pieza matemática final.',
+      falsificationChallenge:
+        'Esperar la aportación del autor con la pieza complementaria antes de certificar el manuscrito.'
+    }
+  ],
+  reviewFindings: [
+    {
+      id: 'rf-incomplete-piece',
+      severity: 'critical',
+      resolved: false,
+      targetBlockId: 'pending-author-piece',
+      reviewerId: 'Editorial-Oversight-Committee',
+      description:
+        'BLOCKING: Manuscrito marcado como inacabado por el autor. Falta la pieza complementaria.'
+    }
+  ],
+  citations: [
+    {
+      id: 'ref-griffiths-2020',
+      text: 'Lieder F, Griffiths TL. Resource-rational analysis: Understanding human cognition as the optimal use of bounded computational resources. Behav Brain Sci. 2020; 43:e1.',
+      doi: '10.1017/s0140525x1900061x'
+    },
+    {
+      id: 'ref-capraro-2025',
+      text: 'Capraro V, et al. Epistemia: Measuring the epistemic quality and verifiability of human and machine scientific discourse. arXiv:2512.19466',
+      doi: '10.48550/arXiv.2512.19466'
+    }
+  ],
+  figures: []
+};
+
 export function getDocumentById(docId: string): ComputableDocument {
   if (docId === '2026-11-pseudo-lof-dementia' || docId.includes('dementia') || docId.includes('pseudo-lof')) {
     return DEMENTIA_5GENES_DOCUMENT;
+  }
+  if (docId === '2026-11-alpoge-riemann-hypothesis' || docId.includes('alpoge') || docId.includes('riemann')) {
+    return ALPOGE_RH_DOCUMENT;
   }
   return DEFAULT_ALZHEIMER_TAU_DOCUMENT;
 }

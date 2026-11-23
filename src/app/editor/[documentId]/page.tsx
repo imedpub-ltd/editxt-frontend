@@ -178,6 +178,17 @@ export default function LivingEditorPage({
               </Link>
               <span>·</span>
               <Link
+                href="/editor/2026-11-alpoge-riemann-hypothesis"
+                className={`font-semibold hover:underline ${
+                  documentId.includes('alpoge') || documentId.includes('riemann')
+                    ? 'text-[#2563eb] underline'
+                    : 'text-[#78716c]'
+                }`}
+              >
+                Riemann Hypothesis (Lean 4) [INCOMPLETE]
+              </Link>
+              <span>·</span>
+              <Link
                 href="/editor/MANUSCRIPT-ALZHEIMER-TAU-2026"
                 className={`font-semibold hover:underline ${
                   documentId === 'MANUSCRIPT-ALZHEIMER-TAU-2026'
@@ -188,6 +199,12 @@ export default function LivingEditorPage({
                 Alzheimer pTau217 Study
               </Link>
             </div>
+            {docData.statusNotice && (
+              <div className="mt-2 rounded bg-amber-50 border border-amber-300 px-3 py-1.5 text-xs font-semibold text-amber-900 flex items-center gap-2">
+                <span className="text-base">⚠</span>
+                <span>{docData.statusNotice}</span>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -214,12 +231,21 @@ export default function LivingEditorPage({
               📦 Packaging Gate
             </Link>
 
-            <Link
-              href={`/submit?doc=${documentId}&prefill=true`}
-              className="rounded border border-emerald-600 bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-700 transition"
-            >
-              🚀 Submit Manuscript →
-            </Link>
+            {docData.isFinished === false ? (
+              <span
+                className="rounded border border-amber-400 bg-amber-100 px-4 py-2 text-xs font-bold text-amber-900 cursor-not-allowed"
+                title="Manuscrito marcado como inacabado por el autor. Falta una pieza final."
+              >
+                ⏸ Envío Pausado (Inacabado)
+              </span>
+            ) : (
+              <Link
+                href={`/submit?doc=${documentId}&prefill=true`}
+                className="rounded border border-emerald-600 bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-700 transition"
+              >
+                🚀 Submit Manuscript →
+              </Link>
+            )}
           </div>
         </div>
       </div>

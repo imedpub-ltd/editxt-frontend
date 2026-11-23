@@ -206,14 +206,14 @@ export default function PreprintsPage() {
                   </span>
                   <span>Posted: November 23, 2026</span>
                   <span>·</span>
-                  <span className="font-mono text-[#44403c]">Version 1.0</span>
+                  <span className="font-mono text-[#44403c]">Version 1.1</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
-                    <span>✓</span> Dual-Kernel Certified (leanchecker + Lean 4)
+                    <span>✓</span> Lean 4 Build + --fresh Replay Certified (26,898s)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:7d8c...8837
+                    sha256:b37d...c3ec
                   </span>
                 </div>
               </div>
@@ -226,7 +226,7 @@ export default function PreprintsPage() {
                 Manuel Menéndez-González (Fundación de Neurociencias, Oviedo, Spain)
               </div>
               <div className="text-[11px] text-[#78716c] italic mt-0.5">
-                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · 127,812s wall-clock · 175,187 modules · 183,889 .olean binaries verified · 0 sorry · 28-line statement TCB
+                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · lake build Main: 127,812s · leanchecker --fresh Main: 26,898s (exit 0) · 175,187 modules · 0 sorry · 28-line TCB
               </div>
 
               {/* Cognitive Opacity Tools Showcase */}
@@ -252,13 +252,13 @@ export default function PreprintsPage() {
 
                 <div className="flex flex-wrap items-center gap-2">
                   <a
-                    href="https://github.com/Fundacion-de-Neurociencias/riemann-hypothesis-audit-dossier"
+                    href="https://github.com/Fundacion-de-Neurociencias/riemann-hypothesis-audit-dossier/releases/tag/v1.1"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded border border-[#d6d3d1] bg-white text-[#44403c] hover:bg-[#f5f5f4] px-3 py-1.5 font-medium transition flex items-center gap-1"
                   >
                     <span>📁</span>
-                    <span>Dossier Público ↗</span>
+                    <span>Dossier Público v1.1 ↗</span>
                   </a>
                   <a
                     href="/visualizations/epistemic_spine_explorer.html"

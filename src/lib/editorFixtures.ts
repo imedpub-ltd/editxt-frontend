@@ -456,7 +456,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO (DRY RUN): Verificación en Apple M4 Max (16 núcleos, 64 GB RAM), leanchecker independiente y explorador interactivo D3 de la Epistemic Spine.',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.1 (DRY RUN): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo lake env leanchecker --fresh Main (26.898s, exit_code=0, mkEmptyEnvironment) y explorador D3 integrados.',
   authors: [
     {
       name: 'Manuel Menéndez-González',
@@ -473,7 +473,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'We present the independent formal verification, deductive dependency mapping, dual-kernel certification audit, and epistemological evaluation of Levent Alpöge\'s formal proof of the Riemann Hypothesis (RH) and Generalized Riemann Hypothesis (GRH) for Dirichlet L-functions in Lean 4. The complete compilation was executed on an Apple M4 Max (16-core ARM64, 64 GB unified memory, 98 GB build footprint), taking '
+            'We present the independent formal verification, transitive fresh-environment replay, deductive dependency mapping, and epistemological evaluation of Levent Alpöge\'s formal proof of the Riemann Hypothesis (RH) and Generalized Riemann Hypothesis (GRH) for Dirichlet L-functions in Lean 4. Clean compilation on an Apple M4 Max (16-core ARM64, 64 GB unified memory, 98 GB build footprint) took '
         },
         { kind: 'anchor', variablePath: 'mac_studio.wall_clock_seconds', display: '127,812 seconds (35.5 h)' },
         {
@@ -498,13 +498,19 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'To audit single-binary trust, independent verification was performed on all '
+            'Transitive fresh-environment replay via lake env leanchecker --fresh Main completed cleanly from mkEmptyEnvironment in '
+        },
+        { kind: 'anchor', variablePath: 'mac_studio.leanchecker_fresh_seconds', display: '26,898 seconds (7 h 28 min 18 s)' },
+        {
+          kind: 'text',
+          text:
+            ' (exit_code = 0, log SHA-256 ff8ea3d0...) across all '
         },
         { kind: 'anchor', variablePath: 'mac_studio.olean_binaries_count', display: '183,889 .olean binaries' },
         {
           kind: 'text',
           text:
-            ' using leanchecker. Memory-scaling boundaries for third-party external kernels (nanoda / lean4export reached 46.47 GB RAM limit) were characterized alongside leanchecker --fresh validation.'
+            ', ruling out .olean corruption, environment hacking, and metaprogramming bypasses under Lean v4.33.1. Only an independent external Rust second kernel (nanoda / lean4export stalled at 46.47 GB on 64 GB RAM) remains open locally.'
         }
       ]
     },
@@ -517,13 +523,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'Execution on Apple M4 Max (16 cores, 64 GB RAM) utilized a peak resident memory footprint of '
+            'Independent clean compilation on Apple M4 Max (16-core ARM64, 64 GB unified memory) produced a '
         },
-        { kind: 'anchor', variablePath: 'mac_studio.memory_rss_gb', display: '94.2 GB RSS' },
+        { kind: 'anchor', variablePath: 'mac_studio.build_footprint_gb', display: '98 GB .lake/build footprint' },
         {
           kind: 'text',
           text:
-            ' (including compressed swap), certifying all 5 root theorems with zero kernel axiom modifications.'
+            ', certifying all 5 root theorems with exit code 0 and zero custom axioms.'
         }
       ]
     },
@@ -642,6 +648,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
     },
     {
       nodeId: 'dual-cert',
+      variablePath: 'mac_studio.leanchecker_fresh_seconds',
+      expectedValue: 26898,
+      contextText: '26,898 seconds (7 h 28 min 18 s)',
+      claimId: 'CLM-LEANCHECK-001'
+    },
+    {
+      nodeId: 'dual-cert',
       variablePath: 'mac_studio.olean_binaries_count',
       expectedValue: 183889,
       contextText: '183,889 .olean binaries',
@@ -649,9 +662,9 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
     },
     {
       nodeId: 'empirical-mac',
-      variablePath: 'mac_studio.memory_rss_gb',
-      expectedValue: 94.2,
-      contextText: '94.2 GB RSS',
+      variablePath: 'mac_studio.build_footprint_gb',
+      expectedValue: 98,
+      contextText: '98 GB .lake/build footprint',
       claimId: 'CLM-LEAN4-001'
     },
     {
@@ -700,26 +713,26 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   manifestDeltas: [],
   findings: [
     {
-      findingId: 'f-verified-dual-cert',
+      findingId: 'f-verified-fresh-replay',
       blockId: 'dual-cert',
       badgeType: 'CITATION_WARNING',
-      category: 'DUAL_CERTIFICATION_GATE',
-      auditorAgent: 'Leanchecker-Independent-Auditor',
-      targetSpan: '183,889 .olean binaries',
+      category: 'KERNEL_FRESH_REPLAY_GATE_V1_1',
+      auditorAgent: 'Leanchecker-Fresh-Replay-Auditor',
+      targetSpan: '26,898 seconds (7 h 28 min 18 s)',
       explanation:
-        'Dual certification executed via independent leanchecker binary on Mac Studio. Zero type corruption or cryptographic anomalies detected across 183,889 modules.',
-      replacementText: 'Dual certification confirmed across 183,889 compiled binary modules.'
+        'KERNEL_CHECKED_AND_FRESH_REPLAYED_V4_33_1: lake env leanchecker --fresh Main completed with exit_code=0 from mkEmptyEnvironment (SHA-256 ff8ea3d0...), ruling out .olean corruption and environment hacking. External Rust kernel (nanoda) remains open locally due to 46.47 GB export memory ceiling on 64 GB RAM.',
+      replacementText: 'Transitive fresh replay confirmed (26,898s, exit_code=0); external Rust second kernel noted as local 64 GB hardware limit.'
     }
   ],
   reviewFindings: [
     {
-      id: 'rf-dual-cert',
+      id: 'rf-fresh-replay-v1-1',
       severity: 'minor',
       resolved: true,
       targetBlockId: 'dual-cert',
       reviewerId: 'Editorial-Oversight-Committee',
       description:
-        'Independent leanchecker execution confirmed on Mac Studio. Dual kernel certification passed.'
+        'v1.1 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, exit_code=0, SHA-256 ff8ea3d0...) passed. External nanoda 64 GB boundary transparently documented.'
     }
   ],
   citations: [

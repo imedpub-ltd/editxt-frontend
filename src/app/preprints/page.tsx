@@ -213,7 +213,7 @@ export default function PreprintsPage() {
                     <span>✓</span> Lean 4 Build + --fresh Replay Certified (26,898s)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:b37d...c3ec
+                    sha256:22ee...a7b4
                   </span>
                 </div>
               </div>

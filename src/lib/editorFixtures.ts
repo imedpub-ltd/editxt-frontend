@@ -452,15 +452,16 @@ export const DEFAULT_ALZHEIMER_TAU_DOCUMENT: ComputableDocument = {
 export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   id: '2026-11-alpoge-riemann-hypothesis',
   title:
-    'Epistemic Opacity and the Mechanical Sublime: Empirical Verification of the Riemann Hypothesis in Lean 4 and Autonomous Epistemic Reconstruction',
+    'Independent Formal Verification, Epistemic Spine Cartography, and Comparative Auditing of Riemann Hypothesis Proof Claims',
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ MANUSCRITO COMPLETO Y CERTIFICADO: Verificación en Mac Studio M2 Ultra, leanchecker independiente y navegador epistémico interactivo integrados.',
+  statusNotice: '✓ PREPRINT CERTIFICADO (DRY RUN): Verificación en Apple M4 Max (16 núcleos, 64 GB RAM), leanchecker independiente y explorador interactivo D3 de la Epistemic Spine.',
   authors: [
     {
-      name: 'CoResearcher Cognitive Systems Group & Theoretical Metascience Laboratory',
-      affiliation: 'Autonomous Metascience & Verification Unit, Mac Studio Node'
+      name: 'Manuel Menéndez-González',
+      affiliation: 'Fundación de Neurociencias, Oviedo, Spain',
+      orcid: '0000-0002-1825-0097'
     }
   ],
   blocks: [
@@ -472,19 +473,19 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'We present the end-to-end computational verification, deductive dependency audit, independent dual-kernel certification, and epistemological deconstruction of Levent Alpöge\'s formal proof of the Riemann Hypothesis (RH) and Generalized Riemann Hypothesis (GRH) for Dirichlet L-functions, implemented in the Lean 4 proof assistant. The compilation was executed independently on a 24-core Apple M2 Ultra architecture with 128 GB of unified memory, requiring '
+            'We present the independent formal verification, deductive dependency mapping, dual-kernel certification audit, and epistemological evaluation of Levent Alpöge\'s formal proof of the Riemann Hypothesis (RH) and Generalized Riemann Hypothesis (GRH) for Dirichlet L-functions in Lean 4. The complete compilation was executed on an Apple M4 Max (16-core ARM64, 64 GB unified memory, 98 GB build footprint), taking '
         },
         { kind: 'anchor', variablePath: 'mac_studio.wall_clock_seconds', display: '127,812 seconds (35.5 h)' },
         {
           kind: 'text',
           text:
-            ' to process exactly '
+            ' to compile '
         },
         { kind: 'anchor', variablePath: 'mac_studio.modules_compiled', display: '175,187 modules' },
         {
           kind: 'text',
           text:
-            ' comprising 17,373,109 lines of formal code. Kernel axiomatic audit through #print axioms confirmed zero sorry occurrences under standard propext, Classical.choice, and Quot.sound.'
+            ' with exit code 0. Kernel axiomatic audit through #print axioms confirmed zero sorry statements under propext, Classical.choice, and Quot.sound across a 28-line statement TCB.'
         }
       ]
     },
@@ -497,13 +498,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'To overcome single-binary trust limitations, external dual verification was executed with the independent standalone checker leanchecker across all '
+            'To audit single-binary trust, independent verification was performed on all '
         },
         { kind: 'anchor', variablePath: 'mac_studio.olean_binaries_count', display: '183,889 .olean binaries' },
         {
           kind: 'text',
           text:
-            ', verifying cryptographic header integrity and definitional type equality directly against Lean kernel specifications.'
+            ' using leanchecker. Memory-scaling boundaries for third-party external kernels (nanoda / lean4export reached 46.47 GB RAM limit) were characterized alongside leanchecker --fresh validation.'
         }
       ]
     },
@@ -516,13 +517,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'Autonomous execution on Mac Studio reached peak resident set size of '
+            'Execution on Apple M4 Max (16 cores, 64 GB RAM) utilized a peak resident memory footprint of '
         },
         { kind: 'anchor', variablePath: 'mac_studio.memory_rss_gb', display: '94.2 GB RSS' },
         {
           kind: 'text',
           text:
-            ', verifying all five root theorems with exit code 0 and zero uninstantiated axioms.'
+            ' (including compressed swap), certifying all 5 root theorems with zero kernel axiom modifications.'
         }
       ]
     },
@@ -534,7 +535,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'Topological dependency mining across 818,755 declarations and 43 strata uncovered a radical structural bottleneck at depth 6–7: UniformisationConclusion.lean exhibits a fan-in of '
+            'Deductive DAG cartography across 818,755 declarations and 43 strata reveals an acute structural bottleneck at depth 6–7: UniformisationConclusion.lean exhibits a fan-in of '
         },
         { kind: 'anchor', variablePath: 'topological_dag.bottleneck_fan_in', display: '2,390 modules' },
         {
@@ -546,7 +547,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            ', coupling birational toroidal compactification to adelic spectral positivity across the 6 barrier-breaking motifs (Adelic Trace Duality, SOS Positivity, Spectral Shift Invariance, Cohomological Parity, Automorphic Kernel Bound, Desingularization Bridge).'
+            ', orchestrating 6 fundamental mathematical motifs: Galois patching (109,260 decls), Unitary theta lifts (15,750 decls), Bost slope & Iwasawa towers (13,010 decls), GGP & Bessel positivity (7,011 decls), Siegel mass & Chowla-Selberg (4,618 decls), and Stepanov determinants (1,808 decls).'
         }
       ]
     },
@@ -558,7 +559,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'To reduce cognitive opacity for human mathematicians, we deploy two open epistemic artifacts: an interactive D3 Epistemic Spine Navigator (epistemic_graph_navigator.html) charting the 43 strata and chokepoints, and an informal mathematical treatise (alpoge_rh_chapter_zero.md) translating 17.3M lines of code into contemporary Mumford-Chai-Faltings toroidal compactification and Arakelov intersection theory.'
+            'To resolve epistemic opacity, we deliver open interactive instruments: the D3 Epistemic Spine Explorer (epistemic_spine_explorer.html) mapping all 6 motifs and 11 mathematical libraries, and the Mathematical Architecture Primer (mathematical_architecture_primer.md) detailing the analytic bridges across unitary Shimura varieties.'
         }
       ]
     },
@@ -570,19 +571,19 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'Juxtaposing Alpöge\'s opaque formal artifact (Epistemia Index '
+            'Comparative epistemic auditing highlights divergent verification pathways: Alpöge\'s root formal theorems yield an Epistemia risk score of '
         },
-        { kind: 'anchor', variablePath: 'epistemia_index.alpoge', display: 'E_I = 0.885' },
+        { kind: 'anchor', variablePath: 'epistemia_index.alpoge', display: 'E_I = 0.245 (VALID_OPAQUE)' },
         {
           kind: 'text',
           text:
-            ') with Alessandro Masullo\'s 940-page human manuscript (Epistemia Index '
+            ' (0.4075 when bundled with unformalized ERH), whereas Alessandro Masullo\'s 940-page informal manuscript yields an Epistemia risk score of '
         },
-        { kind: 'anchor', variablePath: 'epistemia_index.masullo', display: 'E_I = 0.340' },
+        { kind: 'anchor', variablePath: 'epistemia_index.masullo', display: 'E_I = 0.850 (SUSPEND_JUDGMENT)' },
         {
           kind: 'text',
           text:
-            ') exposes the contemporary crisis where machine verification and biological comprehensibility diverge (HMTI = 0.084).'
+            ' due to 19 broken references and incomplete critical sections in Chapter 13.'
         }
       ]
     }
@@ -599,7 +600,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       nodeId: 'abs-rh',
       variablePath: 'mac_studio.modules_compiled',
       expectedValue: 175187,
-      contextText: 'exactly 175,187 modules',
+      contextText: 'compile 175,187 modules',
       claimId: 'CLM-LEAN4-001'
     },
     {
@@ -633,15 +634,15 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
     {
       nodeId: 'epistemic-tension',
       variablePath: 'epistemia_index.alpoge',
-      expectedValue: 0.885,
-      contextText: 'E_I = 0.885',
+      expectedValue: 0.245,
+      contextText: 'E_I = 0.245 (VALID_OPAQUE)',
       claimId: 'CLM-EPIST-001'
     },
     {
       nodeId: 'epistemic-tension',
       variablePath: 'epistemia_index.masullo',
-      expectedValue: 0.340,
-      contextText: 'E_I = 0.340',
+      expectedValue: 0.850,
+      contextText: 'E_I = 0.850 (SUSPEND_JUDGMENT)',
       claimId: 'CLM-EPIST-001'
     }
   ],
@@ -684,15 +685,21 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   ],
   figures: [
     {
-      id: 'fig-nav',
-      title: 'Interactive D3 Epistemic Spine Navigator (43 Strata & Chokepoints)',
-      file: 'epistemic_graph_navigator.html',
+      id: 'fig-spine-explorer',
+      title: 'Interactive D3 Epistemic Spine Explorer (6 Motifs & 11 Libraries)',
+      file: 'epistemic_spine_explorer.html',
       dpi: 300
     },
     {
-      id: 'fig-ch0',
-      title: 'Informal Mathematical Treatise ("Capítulo 0")',
-      file: 'alpoge_rh_chapter_zero.md',
+      id: 'fig-math-primer',
+      title: 'Mathematical Architecture Primer (Unitary Shimura Varieties & Positivity)',
+      file: 'mathematical_architecture_primer.md',
+      dpi: 300
+    },
+    {
+      id: 'fig-comparative-audit',
+      title: 'Comparative Epistemic Audit (Alpöge vs. Masullo)',
+      file: 'comparative_audit_alpoge_vs_masullo.md',
       dpi: 300
     }
   ]

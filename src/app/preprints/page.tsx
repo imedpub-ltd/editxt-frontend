@@ -213,20 +213,20 @@ export default function PreprintsPage() {
                     <span>✓</span> Dual-Kernel Certified (leanchecker + Lean 4)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:196e...7e12
+                    sha256:4729...3508
                   </span>
                 </div>
               </div>
 
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1c1917] leading-snug">
-                Epistemic Opacity and the Mechanical Sublime: Empirical Verification of the Riemann Hypothesis in Lean 4 and Autonomous Epistemic Reconstruction
+                Independent Formal Verification, Epistemic Spine Cartography, and Comparative Auditing of Riemann Hypothesis Proof Claims
               </h2>
 
               <div className="mt-2 text-xs font-semibold text-[#1c1917]">
-                CoResearcher Cognitive Systems Group &amp; Theoretical Metascience Laboratory
+                Manuel Menéndez-González (Fundación de Neurociencias, Oviedo, Spain)
               </div>
               <div className="text-[11px] text-[#78716c] italic mt-0.5">
-                Certified on Apple M2 Ultra (mac_studio) · 127,812s wall-clock · 175,187 modules · 183,889 .olean binaries verified · 0 sorry · Epistemic Spine Fan-in: 2,390
+                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · 127,812s wall-clock · 175,187 modules · 183,889 .olean binaries verified · 0 sorry · 28-line statement TCB
               </div>
 
               {/* Cognitive Opacity Tools Showcase */}
@@ -236,7 +236,7 @@ export default function PreprintsPage() {
                   <span>Herramientas de Reducción de Opacidad Cognitiva Integradas:</span>
                 </div>
                 <p className="text-[#44403c] leading-relaxed">
-                  Para hacer humanamente comprensible la demostración de 17.3M de líneas de código Lean, este preprint incluye el <strong>Navegador Interactivo D3 de la Epistemic Spine</strong> (explorando las 43 capas y el estrangulamiento de <em>UniformisationConclusion</em> con fan-in 2.390) y el <strong>Capítulo 0 Informal</strong> en prosa matemática contemporánea (variedades modulares aritméticas, compactificación toroidal y suma de cuadrados SOS).
+                  Para auditar y hacer humanamente comprensible la demostración, este preprint integra el <strong>Explorador Interactivo D3 de la Epistemic Spine</strong> (cartografía de los 6 motivos matemáticos y el cuello de botella en <em>UniformisationConclusion</em> con fan-in 2.390), el <strong>Primer Matemático</strong> en variedades unitarias de Shimura y positividad adélica, y la <strong>Auditoría Comparativa Alpöge vs. Masullo</strong> (riesgo Epistemia 0.245 frente a 0.850).
                 </p>
               </div>
 
@@ -244,7 +244,7 @@ export default function PreprintsPage() {
               <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="font-mono bg-[#f5f5f4] border border-[#e7e5e4] px-2 py-0.5 rounded text-[#44403c]">
-                    Zenodo DOI: 10.5281/zenodo.draft-reservation-alpoge-rh
+                    Zenodo DOI: 10.5281/zenodo.draft-reservation-rh-grh-epistemic-audit
                   </span>
                   <span className="text-[#a8a29e]">·</span>
                   <span className="text-[#78716c]">Cuello de Botella: UniformisationConclusion (fan-in 2.390)</span>
@@ -252,13 +252,22 @@ export default function PreprintsPage() {
 
                 <div className="flex flex-wrap items-center gap-2">
                   <a
-                    href="/visualizations/epistemic_graph_navigator.html"
+                    href="https://github.com/Fundacion-de-Neurociencias/riemann-hypothesis-audit-dossier"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded border border-[#d6d3d1] bg-white text-[#44403c] hover:bg-[#f5f5f4] px-3 py-1.5 font-medium transition flex items-center gap-1"
+                  >
+                    <span>📁</span>
+                    <span>Dossier Público ↗</span>
+                  </a>
+                  <a
+                    href="/visualizations/epistemic_spine_explorer.html"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded border border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 px-3 py-1.5 font-bold transition flex items-center gap-1"
                   >
                     <span>🌐</span>
-                    <span>Epistemic Spine D3 Navigator ↗</span>
+                    <span>Epistemic Spine D3 Explorer ↗</span>
                   </a>
                   <Link
                     href="/editor/2026-11-alpoge-riemann-hypothesis"

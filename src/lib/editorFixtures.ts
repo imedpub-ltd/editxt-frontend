@@ -552,6 +552,43 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       ]
     },
     {
+      id: 'rh-meaning-necessity',
+      kind: 'paragraph',
+      semanticType: 'NarrativeBlock',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Rather than asserting "perfect randomness," RH establishes optimal deterministic cancellation between additive stepping (+1) and multiplicative block-packing: π(x) = Li(x) + O(√x log x), with Montgomery–Odlyzko GUE level repulsion forbidding large-scale oscillatory bias. Separating unbounded arithmetic law (the medium) from finite physical instantiation bounds (Planck scale floor; ~10^120 ops on ~10^90 bits, Lloyd 2002; cosmic horizon entropy ~2.6×10^122 k_B) clarifies why asymptotic proof still matters: finite checks alone miss scale-crossing phenomena such as Littlewood\'s sign reversal of π(x) − li(x) bounded near '
+        },
+        { kind: 'anchor', variablePath: 'arithmetic_bounds.skewes_upper_bound', display: '1.397 × 10^316' },
+        {
+          kind: 'text',
+          text:
+            '. Thus critical-line alignment reflects pure combinatorial and structural necessity rather than physical fine-tuning.'
+        }
+      ]
+    },
+    {
+      id: 'formal-trust-anatomy',
+      kind: 'claim',
+      semanticType: 'ProofBlock',
+      claimId: 'CLM-TCB-001',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'To make formal verification transparent to non-Lean readers, our Anatomy of Formal Trust isolates the four possible failure vectors (specification hacking including 1/0 = 0 total division, proof skipping/axiom smuggling, single-kernel bugs, and prose scope inflation). Humans need only inspect the '
+        },
+        { kind: 'anchor', variablePath: 'tcb.external_statement_lines', display: '28-line external TCB' },
+        {
+          kind: 'text',
+          text:
+            ' (R_TCB = 1.62 × 10^-6). Metamathematically, discharging all five Π_1^0-equivalent root theorems strictly over [propext, Classical.choice, Quot.sound] confirms that standard mathematical foundations suffice deductively without exotic axioms.'
+        }
+      ]
+    },
+    {
       id: 'opacity-reduction',
       kind: 'paragraph',
       semanticType: 'ProofBlock',
@@ -559,7 +596,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            'To resolve epistemic opacity, we deliver open interactive instruments: the D3 Epistemic Spine Explorer (epistemic_spine_explorer.html) mapping all 6 motifs and 11 mathematical libraries, and the Mathematical Architecture Primer (mathematical_architecture_primer.md) detailing the analytic bridges across unitary Shimura varieties.'
+            'Echoing Thurston (1994) and Griffiths (2026), kernel certification completes only Phase 1; Phase 2 is cognitive distillation. We deliver open interactive instruments: the D3 Epistemic Spine Explorer (epistemic_spine_explorer.html) mapping all 6 motifs and 11 libraries, and the Three-Level Mathematical Architecture Primer (mathematical_architecture_primer.md) bridging classical Chebyshev–Stepanov divisibility to iterated unitary theta lifts.'
         }
       ]
     },
@@ -644,6 +681,20 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       expectedValue: 0.850,
       contextText: 'E_I = 0.850 (SUSPEND_JUDGMENT)',
       claimId: 'CLM-EPIST-001'
+    },
+    {
+      nodeId: 'rh-meaning-necessity',
+      variablePath: 'arithmetic_bounds.skewes_upper_bound',
+      expectedValue: '1.397e316',
+      contextText: '1.397 × 10^316',
+      claimId: 'CLM-ARITH-001'
+    },
+    {
+      nodeId: 'formal-trust-anatomy',
+      variablePath: 'tcb.external_statement_lines',
+      expectedValue: 28,
+      contextText: '28-line external TCB',
+      claimId: 'CLM-TCB-001'
     }
   ],
   manifestDeltas: [],
@@ -673,13 +724,43 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   ],
   citations: [
     {
-      id: 'ref-griffiths-2020',
-      text: 'Lieder F, Griffiths TL. Resource-rational analysis: Understanding human cognition as the optimal use of bounded computational resources. Behav Brain Sci. 2020; 43:e1.',
-      doi: '10.1017/s0140525x1900061x'
+      id: 'ref-vonkoch-1901',
+      text: 'von Koch H. Sur la distribution des nombres premiers. Acta Mathematica. 1901; 24:159-182.',
+      doi: '10.1007/BF02403071'
+    },
+    {
+      id: 'ref-montgomery-1973',
+      text: 'Montgomery HL. The pair correlation of zeros of the zeta function. Proc Symp Pure Math. 1973; 24:181-193.',
+      doi: '10.1090/pspum/024/9944'
+    },
+    {
+      id: 'ref-odlyzko-1987',
+      text: 'Odlyzko AM. On the distribution of spacings between zeros of the zeta function. Math Comp. 1987; 48(177):273-308.',
+      doi: '10.1090/S0025-5718-1987-0866115-0'
+    },
+    {
+      id: 'ref-thurston-1994',
+      text: 'Thurston WP. On proof and progress in mathematics. Bull Amer Math Soc. 1994; 30(2):161-177.',
+      doi: '10.1090/S0273-0979-1994-00502-6'
+    },
+    {
+      id: 'ref-lagarias-2002',
+      text: 'Lagarias JC. An elementary problem equivalent to the Riemann hypothesis. Amer Math Monthly. 2002; 109(6):534-543.',
+      doi: '10.2307/2695443'
+    },
+    {
+      id: 'ref-lloyd-2002',
+      text: 'Lloyd S. Computational capacity of the universe. Phys Rev Lett. 2002; 88(23):237901.',
+      doi: '10.1103/PhysRevLett.88.237901'
+    },
+    {
+      id: 'ref-saouter-2015',
+      text: 'Saouter Y, Trudgian T, Demichel P. A still sharper region where π(x) − li(x) is positive. Math Comp. 2015; 84(295):2433-2446.',
+      doi: '10.1090/S0025-5718-2015-02930-5'
     },
     {
       id: 'ref-capraro-2025',
-      text: 'Capraro V, et al. Epistemia: Measuring the epistemic quality and verifiability of human and machine scientific discourse. arXiv:2512.19466',
+      text: 'Quattrociocchi W, Capraro V, Perc M. Epistemological Fault Lines Between Human and Artificial Intelligence. arXiv:2512.19466.',
       doi: '10.48550/arXiv.2512.19466'
     }
   ],

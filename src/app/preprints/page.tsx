@@ -213,7 +213,7 @@ export default function PreprintsPage() {
                     <span>✓</span> Dual-Kernel Certified (leanchecker + Lean 4)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:4729...3508
+                    sha256:7d8c...8837
                   </span>
                 </div>
               </div>
@@ -233,10 +233,10 @@ export default function PreprintsPage() {
               <div className="mt-4 rounded border border-emerald-200 bg-emerald-50/50 p-4 text-xs text-emerald-950 space-y-2">
                 <div className="font-bold flex items-center gap-1.5 text-emerald-900">
                   <span>🌐</span>
-                  <span>Herramientas de Reducción de Opacidad Cognitiva Integradas:</span>
+                  <span>Comprensión Humana de la Prueba y de su Verificación Formal:</span>
                 </div>
                 <p className="text-[#44403c] leading-relaxed">
-                  Para auditar y hacer humanamente comprensible la demostración, este preprint integra el <strong>Explorador Interactivo D3 de la Epistemic Spine</strong> (cartografía de los 6 motivos matemáticos y el cuello de botella en <em>UniformisationConclusion</em> con fan-in 2.390), el <strong>Primer Matemático</strong> en variedades unitarias de Shimura y positividad adélica, y la <strong>Auditoría Comparativa Alpöge vs. Masullo</strong> (riesgo Epistemia 0.245 frente a 0.850).
+                  Traduce el sentido matemático y epistemológico de la RH (cancelación determinista óptima y necesidad combinatoria frente a límites físicos de instanciación y cruces de Littlewood/Skewes), desglosa la <strong>Anatomía de la Confianza Formal</strong> (TCB de 28 líneas y lectura gödeliana de axiomas estándar) e integra el <strong>Explorador Interactivo D3 de la Epistemic Spine</strong>, la <strong>Escalera de Comprensión en 3 Niveles</strong> y la auditoría comparativa Alpöge vs. Masullo (Epistemia 0.245 vs. 0.850).
                 </p>
               </div>
 

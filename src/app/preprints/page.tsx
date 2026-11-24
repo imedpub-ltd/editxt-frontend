@@ -117,7 +117,7 @@ export default function PreprintsPage() {
                   </span>
                   <span>Posted: November 24, 2026</span>
                   <span>·</span>
-                  <span className="font-mono text-[#44403c]">Version 1.1.1</span>
+                  <span className="font-mono text-[#44403c]">Version 1.1.2</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
@@ -155,12 +155,12 @@ export default function PreprintsPage() {
               <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href="https://doi.org/10.5281/zenodo.24492310"
+                    href="https://doi.org/10.5281/zenodo.24510649"
                     target="_blank"
                     rel="noreferrer"
                     className="font-mono bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-emerald-800 hover:bg-emerald-100 transition"
                   >
-                    DOI: 10.5281/zenodo.24492310 ↗
+                    DOI: 10.5281/zenodo.24510649 ↗
                   </a>
                   <span className="text-[#a8a29e]">·</span>
                   <span className="text-[#78716c]">Epistemia: 0.245 vs. 0.850</span>

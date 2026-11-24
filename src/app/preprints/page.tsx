@@ -124,7 +124,7 @@ export default function PreprintsPage() {
                     <span>✓</span> Lean 4 Build + --fresh (26,898s) + lean4lean (28,357/175,187)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:bca6...2ae8
+                    sha256:b302...cb51
                   </span>
                 </div>
               </div>
@@ -154,9 +154,14 @@ export default function PreprintsPage() {
               {/* Summary CTAs */}
               <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-mono bg-[#f5f5f4] border border-[#e7e5e4] px-2 py-0.5 rounded text-[#44403c]">
-                    Zenodo DOI: 10.5281/zenodo.draft-reservation-rh-grh-epistemic-audit
-                  </span>
+                  <a
+                    href="https://doi.org/10.5281/zenodo.24492310"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-emerald-800 hover:bg-emerald-100 transition"
+                  >
+                    DOI: 10.5281/zenodo.24492310 ↗
+                  </a>
                   <span className="text-[#a8a29e]">·</span>
                   <span className="text-[#78716c]">Epistemia: 0.245 vs. 0.850</span>
                 </div>

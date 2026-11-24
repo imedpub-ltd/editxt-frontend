@@ -213,7 +213,7 @@ export default function PreprintsPage() {
                     <span>✓</span> Lean 4 Build + --fresh Replay Certified (26,898s)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:22ee...a7b4
+                    sha256:b791...42b3
                   </span>
                 </div>
               </div>
@@ -223,7 +223,7 @@ export default function PreprintsPage() {
               </h2>
 
               <div className="mt-2 text-xs font-semibold text-[#1c1917]">
-                Manuel Menéndez-González (Fundación de Neurociencias, Oviedo, Spain)
+                Manuel Menéndez-González
               </div>
               <div className="text-[11px] text-[#78716c] italic mt-0.5">
                 Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · lake build Main: 127,812s · leanchecker --fresh Main: 26,898s (exit 0) · 175,187 modules · 0 sorry · 28-line TCB

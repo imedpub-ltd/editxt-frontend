@@ -460,7 +460,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   authors: [
     {
       name: 'Manuel Menéndez-González',
-      affiliation: 'Fundación de Neurociencias, Oviedo, Spain',
+      affiliation: 'Independent',
       orcid: '0000-0002-1825-0097'
     }
   ],

@@ -108,7 +108,89 @@ export default function PreprintsPage() {
         <main className="mx-auto max-w-6xl px-6 py-8">
           <div className="space-y-6">
 
-            {/* Featured Lead Preprint: 5-Gene Dementia Paper */}
+            {/* First Lead Preprint: Alpöge Riemann Hypothesis (v1.1.1) */}
+            <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold uppercase tracking-wider text-purple-800 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded">
+                    Theoretical Metascience &amp; Automated Reasoning
+                  </span>
+                  <span>Posted: November 24, 2026</span>
+                  <span>·</span>
+                  <span className="font-mono text-[#44403c]">Version 1.1.1</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
+                    <span>✓</span> Lean 4 Build + --fresh (26,898s) + lean4lean (28,357/175,187)
+                  </span>
+                  <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
+                    sha256:bca6...2ae8
+                  </span>
+                </div>
+              </div>
+
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1c1917] leading-snug">
+                Independent Formal Verification, Epistemic Spine Cartography, and Comparative Auditing of Riemann Hypothesis Proof Claims
+              </h2>
+
+              <div className="mt-2 text-xs font-semibold text-[#1c1917]">
+                Manuel Menéndez-González
+              </div>
+              <div className="text-[11px] text-[#78716c] italic mt-0.5">
+                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · Full build: 127,812s · Fresh replay: 26,898s · Bounded-RAM lean4lean: 28,357/175,187 modules (616,173 decls, 0 failures) · 28-line TCB
+              </div>
+
+              {/* Cognitive Opacity Tools Showcase */}
+              <div className="mt-4 rounded border border-emerald-200 bg-emerald-50/50 p-4 text-xs text-emerald-950 space-y-2">
+                <div className="font-bold flex items-center gap-1.5 text-emerald-900">
+                  <span>🌐</span>
+                  <span>Comprensión Humana de la Prueba y de su Verificación Formal (v1.1.1):</span>
+                </div>
+                <p className="text-[#44403c] leading-relaxed">
+                  Traduce el sentido matemático y epistemológico de la RH (cancelación determinista óptima y necesidad combinatoria frente a límites físicos de instanciación y cruces de Littlewood/Skewes), desglosa la <strong>Anatomía de la Confianza Formal</strong>, documenta el barrido acotado en RAM con <em>lean4lean</em> (incluyendo los 5 módulos densos <code>decide +kernel</code>), aporta 4 salvaguardas metodológicas (Sec. 7.1) e integra el <strong>Explorador Interactivo D3</strong> y la <strong>Escalera de Comprensión en 3 Niveles</strong>.
+                </p>
+              </div>
+
+              {/* Summary CTAs */}
+              <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="font-mono bg-[#f5f5f4] border border-[#e7e5e4] px-2 py-0.5 rounded text-[#44403c]">
+                    Zenodo DOI: 10.5281/zenodo.draft-reservation-rh-grh-epistemic-audit
+                  </span>
+                  <span className="text-[#a8a29e]">·</span>
+                  <span className="text-[#78716c]">Epistemia: 0.245 vs. 0.850</span>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href="https://github.com/Fundacion-de-Neurociencias/riemann-hypothesis-audit-dossier"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded border border-[#d6d3d1] bg-white text-[#44403c] hover:bg-[#f5f5f4] px-3 py-1.5 font-medium transition flex items-center gap-1"
+                  >
+                    <span>📁</span>
+                    <span>Dossier Público ↗</span>
+                  </a>
+                  <a
+                    href="/visualizations/epistemic_spine_explorer.html"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded border border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 px-3 py-1.5 font-bold transition flex items-center gap-1"
+                  >
+                    <span>🌐</span>
+                    <span>Epistemic Spine D3 Explorer ↗</span>
+                  </a>
+                  <Link
+                    href="/editor/2026-11-alpoge-riemann-hypothesis"
+                    className="rounded bg-[#1c1917] hover:bg-black text-white px-4 py-1.5 font-semibold transition"
+                  >
+                    Open in Living Computable Editor →
+                  </Link>
+                </div>
+              </div>
+            </article>
+
+            {/* Second Preprint: 5-Gene Dementia Paper */}
             <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
                 <div className="flex items-center gap-2">
@@ -193,88 +275,6 @@ export default function PreprintsPage() {
                   >
                     View Preprint Package ↗
                   </a>
-                </div>
-              </div>
-            </article>
-
-            {/* Second Manuscript: Alpöge Riemann Hypothesis (Complete & Double-Certified) */}
-            <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
-              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold uppercase tracking-wider text-purple-800 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded">
-                    Theoretical Metascience &amp; Automated Reasoning
-                  </span>
-                  <span>Posted: November 23, 2026</span>
-                  <span>·</span>
-                  <span className="font-mono text-[#44403c]">Version 1.1</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
-                    <span>✓</span> Lean 4 Build + --fresh Replay Certified (26,898s)
-                  </span>
-                  <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:b791...42b3
-                  </span>
-                </div>
-              </div>
-
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1c1917] leading-snug">
-                Independent Formal Verification, Epistemic Spine Cartography, and Comparative Auditing of Riemann Hypothesis Proof Claims
-              </h2>
-
-              <div className="mt-2 text-xs font-semibold text-[#1c1917]">
-                Manuel Menéndez-González
-              </div>
-              <div className="text-[11px] text-[#78716c] italic mt-0.5">
-                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · lake build Main: 127,812s · leanchecker --fresh Main: 26,898s (exit 0) · 175,187 modules · 0 sorry · 28-line TCB
-              </div>
-
-              {/* Cognitive Opacity Tools Showcase */}
-              <div className="mt-4 rounded border border-emerald-200 bg-emerald-50/50 p-4 text-xs text-emerald-950 space-y-2">
-                <div className="font-bold flex items-center gap-1.5 text-emerald-900">
-                  <span>🌐</span>
-                  <span>Comprensión Humana de la Prueba y de su Verificación Formal:</span>
-                </div>
-                <p className="text-[#44403c] leading-relaxed">
-                  Traduce el sentido matemático y epistemológico de la RH (cancelación determinista óptima y necesidad combinatoria frente a límites físicos de instanciación y cruces de Littlewood/Skewes), desglosa la <strong>Anatomía de la Confianza Formal</strong> (TCB de 28 líneas y lectura gödeliana de axiomas estándar) e integra el <strong>Explorador Interactivo D3 de la Epistemic Spine</strong>, la <strong>Escalera de Comprensión en 3 Niveles</strong> y la auditoría comparativa Alpöge vs. Masullo (Epistemia 0.245 vs. 0.850).
-                </p>
-              </div>
-
-              {/* Summary CTAs */}
-              <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-mono bg-[#f5f5f4] border border-[#e7e5e4] px-2 py-0.5 rounded text-[#44403c]">
-                    Zenodo DOI: 10.5281/zenodo.draft-reservation-rh-grh-epistemic-audit
-                  </span>
-                  <span className="text-[#a8a29e]">·</span>
-                  <span className="text-[#78716c]">Cuello de Botella: UniformisationConclusion (fan-in 2.390)</span>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-2">
-                  <a
-                    href="https://github.com/Fundacion-de-Neurociencias/riemann-hypothesis-audit-dossier/releases/tag/v1.1"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded border border-[#d6d3d1] bg-white text-[#44403c] hover:bg-[#f5f5f4] px-3 py-1.5 font-medium transition flex items-center gap-1"
-                  >
-                    <span>📁</span>
-                    <span>Dossier Público v1.1 ↗</span>
-                  </a>
-                  <a
-                    href="/visualizations/epistemic_spine_explorer.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded border border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 px-3 py-1.5 font-bold transition flex items-center gap-1"
-                  >
-                    <span>🌐</span>
-                    <span>Epistemic Spine D3 Explorer ↗</span>
-                  </a>
-                  <Link
-                    href="/editor/2026-11-alpoge-riemann-hypothesis"
-                    className="rounded bg-[#1c1917] hover:bg-black text-white px-4 py-1.5 font-semibold transition"
-                  >
-                    Open in Living Computable Editor →
-                  </Link>
                 </div>
               </div>
             </article>

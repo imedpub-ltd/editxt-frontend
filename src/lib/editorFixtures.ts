@@ -456,7 +456,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO v1.1 (DRY RUN): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo lake env leanchecker --fresh Main (26.898s, exit_code=0, mkEmptyEnvironment) y explorador D3 integrados.',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.1.1: Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + barrido acotado en RAM con lean4lean (28.357 / 175.187 módulos, 616.173 decls, 0 fallos).',
   authors: [
     {
       name: 'Manuel Menéndez-González',

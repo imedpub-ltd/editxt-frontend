@@ -13,8 +13,16 @@ import {
   type Segment,
   type DataAssertionAnchor,
   type ManifestDelta,
-  type InlineEpistemicFinding
+  type InlineEpistemicFinding,
+  type ComprehensionStatus
 } from '@/lib/editorFixtures';
+
+const COMPREHENSION_BADGE: Record<ComprehensionStatus, { label: string; cls: string }> = {
+  human_verified: { label: 'Human-Verified', cls: 'bg-emerald-50 text-emerald-800 border-emerald-300' },
+  distilled: { label: 'Distilled (3-Level)', cls: 'bg-sky-50 text-sky-800 border-sky-300' },
+  partial: { label: 'Partial Comprehension', cls: 'bg-amber-50 text-amber-800 border-amber-300' },
+  opaque: { label: 'Machine-Only / Opaque', cls: 'bg-stone-100 text-stone-700 border-stone-300' }
+};
 
 function blockToPlainText(block: Block): string {
   return block.segments.map(s => (s.kind === 'text' ? s.text : s.display)).join('');
@@ -58,6 +66,24 @@ export default function LivingEditorPage({
   );
 
   const selectedBlock = editorBlocks.find(b => b.id === selectedBlockId) ?? null;
+
+  const toggleBlockComprehension = (blockId: string, nextStatus: ComprehensionStatus) => {
+    setEditorBlocks(prev =>
+      prev.map(b =>
+        b.id === blockId
+          ? {
+              ...b,
+              comprehensionStatus: nextStatus,
+              auditedBy: nextStatus === 'human_verified' ? 'Human Reviewer (Live Session)' : b.auditedBy
+            }
+          : b
+      )
+    );
+  };
+
+  const comprehendedCount = editorBlocks.filter(
+    b => b.comprehensionStatus === 'human_verified' || b.comprehensionStatus === 'distilled'
+  ).length;
 
   const runDeepReview = async () => {
     setDeepReviewLoading(true);
@@ -185,7 +211,18 @@ export default function LivingEditorPage({
                     : 'text-[#78716c]'
                 }`}
               >
-                Riemann Hypothesis (Lean 4) [INCOMPLETE]
+                Riemann Hypothesis (Lean 4)
+              </Link>
+              <span>·</span>
+              <Link
+                href="/editor/2026-11-anthropic-vp-vnp"
+                className={`font-semibold hover:underline ${
+                  documentId.includes('vp-vnp') || documentId.includes('anthropic')
+                    ? 'text-[#2563eb] underline'
+                    : 'text-[#78716c]'
+                }`}
+              >
+                VP ≠ VNP (Lean 4)
               </Link>
               <span>·</span>
               <Link
@@ -262,7 +299,7 @@ export default function LivingEditorPage({
               <div className="mt-3 flex flex-wrap gap-2 text-xs text-[#57534e]">
                 {docData.authors.map(a => (
                   <span key={a.name} className="font-medium">
-                    {a.name} ({a.affiliation})
+                    {a.name}{a.affiliation && a.affiliation !== 'Independent' ? ` (${a.affiliation})` : ''}
                     {a.orcid && (
                       <span className="ml-1 text-[#2563eb] font-mono">
                         [{a.orcid}]
@@ -271,6 +308,44 @@ export default function LivingEditorPage({
                   </span>
                 ))}
               </div>
+
+              {/* 4-Axis Epistemic Passport */}
+              {docData.epistemicPassport && (
+                <div className="mt-5 rounded border border-[#d6d3d1] bg-[#fafaf9] p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#1c1917]">
+                      4-Axis Epistemic &amp; Provenance Passport
+                    </span>
+                    <span className="font-mono text-[11px] text-[#57534e]">
+                      Comprehension coverage: {comprehendedCount}/{editorBlocks.length} blocks
+                    </span>
+                  </div>
+                  <div className="grid gap-2.5 sm:grid-cols-2 text-xs">
+                    <div className="rounded border border-[#e7e5e4] bg-white p-2.5">
+                      <div className="text-[10px] font-bold uppercase text-[#78716c]">1. Provenance</div>
+                      <div className="font-semibold text-[#1c1917] mt-0.5">{docData.epistemicPassport.provenance.label}</div>
+                      <div className="text-[11px] text-[#57534e] mt-0.5">Custodian: {docData.epistemicPassport.provenance.humanCustodian}</div>
+                    </div>
+                    <div className="rounded border border-[#e7e5e4] bg-white p-2.5">
+                      <div className="text-[10px] font-bold uppercase text-[#78716c]">2. Formal / Empirical Verification</div>
+                      <div className="font-semibold text-[#1c1917] mt-0.5">{docData.epistemicPassport.formalVerification.label}</div>
+                      <div className="text-[11px] text-[#57534e] mt-0.5">{docData.epistemicPassport.formalVerification.summary}</div>
+                    </div>
+                    <div className="rounded border border-[#e7e5e4] bg-white p-2.5">
+                      <div className="text-[10px] font-bold uppercase text-[#78716c]">3. Statement TCB Lock</div>
+                      <div className="font-semibold text-[#1c1917] mt-0.5 font-mono">
+                        {docData.epistemicPassport.statementTcb.statementLines} / {docData.epistemicPassport.statementTcb.totalLines.toLocaleString()} lines ({docData.epistemicPassport.statementTcb.ratio.toExponential(2)})
+                      </div>
+                      <div className="text-[11px] text-[#57534e] mt-0.5">{docData.epistemicPassport.statementTcb.summary}</div>
+                    </div>
+                    <div className="rounded border border-[#e7e5e4] bg-white p-2.5">
+                      <div className="text-[10px] font-bold uppercase text-[#78716c]">4. Human Comprehension</div>
+                      <div className="font-semibold text-[#1c1917] mt-0.5">{docData.epistemicPassport.humanComprehension.label}</div>
+                      <div className="text-[11px] text-[#57534e] mt-0.5">{docData.epistemicPassport.humanComprehension.summary}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Blocks list */}
@@ -308,15 +383,41 @@ export default function LivingEditorPage({
                             Claim {block.claimId}
                           </span>
                         )}
+                        {block.mechanicallyCertified && (
+                          <span className="rounded border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800">
+                            ✓ Mechanically Certified
+                          </span>
+                        )}
+                        {block.comprehensionStatus && (
+                          <span
+                            className={`rounded border px-2 py-0.5 text-[10px] font-semibold ${
+                              COMPREHENSION_BADGE[block.comprehensionStatus].cls
+                            }`}
+                            title={block.comprehensionNote || ''}
+                          >
+                            {COMPREHENSION_BADGE[block.comprehensionStatus].label}
+                          </span>
+                        )}
                       </div>
 
-                      <button
-                        type="button"
-                        onClick={() => inspect(block.id)}
-                        className="text-xs text-[#2563eb] hover:underline"
-                      >
-                        Inspect block data →
-                      </button>
+                      <div className="flex items-center gap-2">
+                        {block.comprehensionStatus && block.comprehensionStatus !== 'human_verified' && (
+                          <button
+                            type="button"
+                            onClick={() => toggleBlockComprehension(block.id, 'human_verified')}
+                            className="rounded border border-emerald-300 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 hover:bg-emerald-100 transition"
+                          >
+                            ✓ Certify Human Understanding
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => inspect(block.id)}
+                          className="text-xs text-[#2563eb] hover:underline"
+                        >
+                          Inspect block data →
+                        </button>
+                      </div>
                     </div>
 
                     <p className="font-serif text-base leading-relaxed text-[#292524]">

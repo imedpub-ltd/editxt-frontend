@@ -28,11 +28,43 @@ export interface Provenance {
   inference: string;
 }
 
+export type ComprehensionStatus = 'opaque' | 'partial' | 'distilled' | 'human_verified';
+
+export interface EpistemicPassport {
+  provenance: {
+    origin: 'human' | 'mixed' | 'ai_autonomous';
+    label: string;
+    humanCustodian: string;
+    orcid?: string;
+  };
+  formalVerification: {
+    status: 'unverified' | 'static_audited' | 'single_kernel' | 'fresh_replay' | 'multi_kernel';
+    label: string;
+    summary: string;
+  };
+  statementTcb: {
+    statementLines: number;
+    totalLines: number;
+    ratio: number;
+    fidelityStatus: 'audited_faithful' | 'pending_human_audit' | 'discrepancy_flagged';
+    summary: string;
+  };
+  humanComprehension: {
+    level: 'none' | 'partial' | 'distilled' | 'verified';
+    label: string;
+    summary: string;
+  };
+}
+
 export interface Block {
   id: string;
   kind: 'paragraph' | 'claim' | 'generated';
   semanticType?: SemanticSegmentType;
   claimId?: string;
+  mechanicallyCertified?: boolean;
+  comprehensionStatus?: ComprehensionStatus;
+  comprehensionNote?: string;
+  auditedBy?: string;
   segments: Segment[];
   provenance?: Provenance;
 }
@@ -81,6 +113,7 @@ export interface ComputableDocument {
   status?: string;
   isFinished?: boolean;
   statusNotice?: string;
+  epistemicPassport?: EpistemicPassport;
   authors: Array<{ name: string; affiliation: string; orcid?: string }>;
   blocks: Block[];
   anchors: DataAssertionAnchor[];
@@ -456,7 +489,32 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO v1.1.1: Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + barrido acotado en RAM con lean4lean (28.357 / 175.187 módulos, 616.173 decls, 0 fallos).',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.1.2 (DOI: 10.5281/zenodo.24510649): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + barrido acotado en RAM con lean4lean (28.357 / 175.187 módulos, 616.173 decls, 0 fallos).',
+  epistemicPassport: {
+    provenance: {
+      origin: 'mixed',
+      label: 'Human Audit + AI Orchestration',
+      humanCustodian: 'Manuel Menéndez-González',
+      orcid: '0000-0002-1825-0097'
+    },
+    formalVerification: {
+      status: 'fresh_replay',
+      label: 'Lean 4 Build + --fresh Replay + lean4lean Streaming',
+      summary: '175,187 modules built (127,812s) + --fresh replay (26,898s) + 28,357/175,187 lean4lean modules (0 failures)'
+    },
+    statementTcb: {
+      statementLines: 28,
+      totalLines: 17330139,
+      ratio: 1.62e-6,
+      fidelityStatus: 'audited_faithful',
+      summary: '28-line root specification anchored in Mathlib RiemannHypothesis & DirichletCharacter.LFunction'
+    },
+    humanComprehension: {
+      level: 'distilled',
+      label: 'Distilled (3-Level Primer + Epistemic Spine)',
+      summary: 'Core mechanism & 6 motifs distilled for human readers; full 17.37M-line tactic body remains opaque'
+    }
+  },
   authors: [
     {
       name: 'Manuel Menéndez-González',
@@ -469,6 +527,10 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       id: 'abs-rh',
       kind: 'paragraph',
       semanticType: 'NarrativeBlock',
+      mechanicallyCertified: true,
+      comprehensionStatus: 'human_verified',
+      comprehensionNote: 'Verified against Mac Studio logs & JSON certificates.',
+      auditedBy: 'M. Menéndez-González',
       segments: [
         {
           kind: 'text',
@@ -494,6 +556,10 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       kind: 'claim',
       semanticType: 'EmpiricalBlock',
       claimId: 'CLM-LEANCHECK-001',
+      mechanicallyCertified: true,
+      comprehensionStatus: 'human_verified',
+      comprehensionNote: 'SHA-256 ff8ea3d0... verified bit-exact.',
+      auditedBy: 'M. Menéndez-González',
       segments: [
         {
           kind: 'text',
@@ -537,6 +603,10 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       id: 'topological-spine',
       kind: 'paragraph',
       semanticType: 'ProofBlock',
+      mechanicallyCertified: true,
+      comprehensionStatus: 'distilled',
+      comprehensionNote: '6 barrier-breaking motifs & UniformisationConclusion hub extracted.',
+      auditedBy: 'CoResearcher + Human Review',
       segments: [
         {
           kind: 'text',
@@ -799,9 +869,198 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   ]
 };
 
+export const VP_VNP_DOCUMENT: ComputableDocument = {
+  id: '2026-11-anthropic-vp-vnp',
+  title:
+    'Independent TCB, Statement-Fidelity, and Static Soundness Audit of the Formalized VP ≠ VNP Proof Claim',
+  targetVenue: 'preprints',
+  status: 'STATIC_AND_TCB_AUDITED',
+  isFinished: true,
+  statusNotice: '🔬 SEGUNDO CASO COMPARATIVO (anthropics/formal-math/vp-vnp): Auditoría estática, de grafo DAG y de fidelidad del TCB (153 líneas) completada sobre 324 archivos (72.932 líneas). Pendiente de replay en Mac Studio.',
+  epistemicPassport: {
+    provenance: {
+      origin: 'ai_autonomous',
+      label: 'AI-Autonomous Proof (Claude) + Human TCB Audit',
+      humanCustodian: 'Manuel Menéndez-González (Independent Auditor)',
+      orcid: '0000-0002-1825-0097'
+    },
+    formalVerification: {
+      status: 'static_audited',
+      label: 'Static & DAG Audited (Mac Studio Build Pending)',
+      summary: '324 .lean files (72,932 lines), 3,242 thms/lemmas, 0 sorry in 322 active-cone files; Mac Studio kernel replay queued'
+    },
+    statementTcb: {
+      statementLines: 153,
+      totalLines: 72932,
+      ratio: 2.10e-3,
+      fidelityStatus: 'audited_faithful',
+      summary: 'Statement.lean (98 lines) + Solution.lean (55 lines) faithfully capture Valiant VP ≠ VNP without division-by-zero traps'
+    },
+    humanComprehension: {
+      level: 'partial',
+      label: 'Partial (TCB & Definitions Audited; Proof Body Unchecked)',
+      summary: '98-line Statement.lean audited by human; 72,779 lines of Nc/Paper/NS1/Ov proofs remain to be distilled'
+    }
+  },
+  authors: [
+    {
+      name: 'Manuel Menéndez-González',
+      affiliation: 'Independent',
+      orcid: '0000-0002-1825-0097'
+    }
+  ],
+  blocks: [
+    {
+      id: 'vpvnp-abs',
+      kind: 'paragraph',
+      semanticType: 'NarrativeBlock',
+      mechanicallyCertified: true,
+      comprehensionStatus: 'human_verified',
+      comprehensionNote: 'Counts extracted deterministically from anthropics/formal-math/vp-vnp.',
+      auditedBy: 'M. Menéndez-González',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'We audit the public Lean 4 formalization of VP ≠ VNP over every field (hexagon:2611.00954v1, anthropics/formal-math/vp-vnp, Lean v4.33.1, pinned to the identical Mathlib revision 0df444a3 as the RH corpus). Exhaustive static analysis across '
+        },
+        { kind: 'anchor', variablePath: 'vpvnp.lean_files', display: '324 .lean files' },
+        {
+          kind: 'text',
+          text:
+            ' totaling '
+        },
+        { kind: 'anchor', variablePath: 'vpvnp.total_lines', display: '72,932 lines' },
+        {
+          kind: 'text',
+          text:
+            ' (3,500,128 bytes) identified 3,217 theorems, 25 lemmas (3,242 total), and 1,157 definitions, with 322/324 modules reachable in the active cone.'
+        }
+      ]
+    },
+    {
+      id: 'vpvnp-soundness',
+      kind: 'claim',
+      semanticType: 'EmpiricalBlock',
+      claimId: 'CLM-VPVNP-STATIC-001',
+      mechanicallyCertified: true,
+      comprehensionStatus: 'human_verified',
+      comprehensionNote: 'Lexical & AST scan confirmed 0 hazards in active cone.',
+      auditedBy: 'M. Menéndez-González',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Static soundness scanning across the 322 active-cone files recorded '
+        },
+        { kind: 'anchor', variablePath: 'vpvnp.active_sorry_count', display: '0 sorry / 0 custom axioms' },
+        {
+          kind: 'text',
+          text:
+            ', zero native_decide, zero unsafe, zero @[implemented_by], and zero partial def declarations. The sole 5 sorry placeholders reside exclusively in Challenge.lean (33 lines), an unimported interface file designed for Comparator statement matching.'
+        }
+      ]
+    },
+    {
+      id: 'vpvnp-tcb',
+      kind: 'claim',
+      semanticType: 'ProofBlock',
+      claimId: 'CLM-VPVNP-TCB-001',
+      mechanicallyCertified: true,
+      comprehensionStatus: 'human_verified',
+      comprehensionNote: 'Full line-by-line human audit of Statement.lean (98 lines) & Solution.lean (55 lines).',
+      auditedBy: 'M. Menéndez-González',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Human inspection of the '
+        },
+        { kind: 'anchor', variablePath: 'vpvnp.tcb_lines', display: '153-line TCB' },
+        {
+          kind: 'text',
+          text:
+            ' (Statement.lean 98 lines + Solution.lean 55 lines, R_TCB = 2.10e-3) confirms faithful formalization of arithmetic circuits (Computes), permanent (perm), Hamiltonian cycle polynomial (hc), superpolynomial bound m^(c (log2 m)^(1/3)), Laurent-series approximants (Approximates), VP, VNP (with implicit polynomial witness-size bound via Fin (r n) inside VP), and strict Separation (VP F ⊂ VNP F). Zero division-by-zero traps exist.'
+        }
+      ]
+    },
+    {
+      id: 'vpvnp-dag',
+      kind: 'paragraph',
+      semanticType: 'ProofBlock',
+      mechanicallyCertified: false,
+      comprehensionStatus: 'partial',
+      comprehensionNote: 'Library stratification mapped (Nc 236 mods, Paper 44, NS1 29, Ov 11); internal proof body awaiting human distillation & Mac Studio build.',
+      segments: [
+        {
+          kind: 'text',
+          text:
+            'Dependency stratification divides the proof mass across four libraries: Nc (236 modules, 46,094 lines, 2,212 thms/lemmas), Paper (44 modules, 17,477 lines, 565 thms), NS1 (29 modules, 7,308 lines, 325 thms), and Ov (11 modules, 1,855 lines, 130 thms). Unlike RH\'s 2,390-module chokepoint, the vp-vnp DAG is balanced (max local fan-in = 7 at NS1.Main and Nc.Rate.Defs) and compact enough for full clean-room kernel replay on 64 GB hardware.'
+        }
+      ]
+    }
+  ],
+  anchors: [
+    {
+      nodeId: 'vpvnp-abs',
+      variablePath: 'vpvnp.lean_files',
+      expectedValue: 324,
+      contextText: '324 .lean files',
+      claimId: 'CLM-VPVNP-STATIC-001'
+    },
+    {
+      nodeId: 'vpvnp-abs',
+      variablePath: 'vpvnp.total_lines',
+      expectedValue: 72932,
+      contextText: '72,932 lines',
+      claimId: 'CLM-VPVNP-STATIC-001'
+    },
+    {
+      nodeId: 'vpvnp-soundness',
+      variablePath: 'vpvnp.active_sorry_count',
+      expectedValue: 0,
+      contextText: '0 sorry / 0 custom axioms',
+      claimId: 'CLM-VPVNP-STATIC-001'
+    },
+    {
+      nodeId: 'vpvnp-tcb',
+      variablePath: 'vpvnp.tcb_lines',
+      expectedValue: 153,
+      contextText: '153-line TCB',
+      claimId: 'CLM-VPVNP-TCB-001'
+    }
+  ],
+  manifestDeltas: [],
+  findings: [
+    {
+      findingId: 'f-vpvnp-kernel-pending',
+      blockId: 'vpvnp-dag',
+      badgeType: 'DISTILLATION_OPPORTUNITY',
+      category: 'KERNEL_REPLAY_AND_DISTILLATION_PENDING',
+      auditorAgent: 'EdiTxt-Epistemic-Passport-Auditor',
+      targetSpan: 'full clean-room kernel replay',
+      explanation:
+        'Static soundness and Statement.lean TCB fidelity are cleared, but live Lean v4.33.1 compilation, #print axioms, and human distillation of the 46,094-line Nc core remain pending.',
+      replacementText: 'Static & TCB audit complete; Mac Studio kernel replay queued for Phase 1 closure.'
+    }
+  ],
+  reviewFindings: [],
+  citations: [
+    {
+      id: 'ref-claude-vpvnp-2026',
+      text: 'Claude (Anthropic). VP ≠ VNP over every field. Hexagon:2611.00954v1; GitHub: anthropics/formal-math/vp-vnp (2026).',
+      doi: '10.48550/hexagon.2611.00954'
+    }
+  ],
+  figures: []
+};
+
 export function getDocumentById(docId: string): ComputableDocument {
   if (docId === '2026-11-pseudo-lof-dementia' || docId.includes('dementia') || docId.includes('pseudo-lof')) {
     return DEMENTIA_5GENES_DOCUMENT;
+  }
+  if (docId === '2026-11-anthropic-vp-vnp' || docId.includes('vp-vnp') || docId.includes('anthropic')) {
+    return VP_VNP_DOCUMENT;
   }
   if (docId === '2026-11-alpoge-riemann-hypothesis' || docId.includes('alpoge') || docId.includes('riemann')) {
     return ALPOGE_RH_DOCUMENT;

@@ -151,6 +151,26 @@ export default function PreprintsPage() {
                 </p>
               </div>
 
+              {/* 4-Axis Epistemic Passport */}
+              <div className="mt-4 grid gap-2 sm:grid-cols-4 text-[11px]">
+                <div className="rounded border border-[#e7e5e4] bg-[#fafaf9] p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-[#78716c]">1. Provenance</div>
+                  <div className="font-semibold text-[#1c1917] mt-0.5">Human Audit + AI Orch.</div>
+                </div>
+                <div className="rounded border border-emerald-200 bg-emerald-50/60 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-emerald-800">2. Verification</div>
+                  <div className="font-semibold text-emerald-950 mt-0.5">Build + --fresh + lean4lean</div>
+                </div>
+                <div className="rounded border border-indigo-200 bg-indigo-50/50 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-indigo-800">3. Statement TCB</div>
+                  <div className="font-semibold text-indigo-950 font-mono mt-0.5">28 / 17.33M lines (1.62e-6)</div>
+                </div>
+                <div className="rounded border border-sky-200 bg-sky-50/60 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-sky-800">4. Comprehension</div>
+                  <div className="font-semibold text-sky-950 mt-0.5">Distilled (3-Level Primer)</div>
+                </div>
+              </div>
+
               {/* Summary CTAs */}
               <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
@@ -195,7 +215,88 @@ export default function PreprintsPage() {
               </div>
             </article>
 
-            {/* Second Preprint: 5-Gene Dementia Paper */}
+            {/* Second Preprint: Anthropic VP != VNP Comparative Audit */}
+            <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-200 px-2 py-0.5 rounded">
+                    Algebraic Complexity &amp; TCB Auditing
+                  </span>
+                  <span>Posted: November 25, 2026</span>
+                  <span>·</span>
+                  <span className="font-mono text-[#44403c]">Version 1.0 (Audit)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
+                    <span>🔬</span> Static + TCB Audited (Mac Studio Replay Queued)
+                  </span>
+                  <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
+                    324 files · 72,932 lines
+                  </span>
+                </div>
+              </div>
+
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1c1917] leading-snug">
+                Independent TCB, Statement-Fidelity, and Static Soundness Audit of the Formalized VP ≠ VNP Proof Claim
+              </h2>
+
+              <div className="mt-2 text-xs font-semibold text-[#1c1917]">
+                Manuel Menéndez-González (Independent Audit of Claude / Anthropic <code className="text-[11px]">hexagon:2611.00954v1</code>)
+              </div>
+              <div className="text-[11px] text-[#78716c] italic mt-0.5">
+                Lean v4.33.1 · 324 .lean files (322 active cone) · 3,242 thms/lemmas · 0 sorry in active cone · Statement.lean (98 lines) + Solution.lean (55 lines) TCB audited
+              </div>
+
+              {/* 4-Axis Epistemic Passport */}
+              <div className="mt-4 grid gap-2 sm:grid-cols-4 text-[11px]">
+                <div className="rounded border border-[#e7e5e4] bg-[#fafaf9] p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-[#78716c]">1. Provenance</div>
+                  <div className="font-semibold text-[#1c1917] mt-0.5">AI-Autonomous + Human TCB</div>
+                </div>
+                <div className="rounded border border-amber-200 bg-amber-50/60 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-amber-800">2. Verification</div>
+                  <div className="font-semibold text-amber-950 mt-0.5">Static OK (Kernel Queued)</div>
+                </div>
+                <div className="rounded border border-indigo-200 bg-indigo-50/50 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-indigo-800">3. Statement TCB</div>
+                  <div className="font-semibold text-indigo-950 font-mono mt-0.5">153 / 72,932 lines (2.10e-3)</div>
+                </div>
+                <div className="rounded border border-amber-200 bg-amber-50/60 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-amber-800">4. Comprehension</div>
+                  <div className="font-semibold text-amber-950 mt-0.5">Partial (TCB Audited)</div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="font-mono bg-[#f5f5f4] border border-[#e7e5e4] px-2 py-0.5 rounded text-[#44403c]">
+                    Target: anthropics/formal-math (vp-vnp)
+                  </span>
+                  <span className="text-[#a8a29e]">·</span>
+                  <span className="text-[#78716c]">Balanced DAG (max fan-in 7)</span>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href="https://github.com/anthropics/formal-math/tree/main/vp-vnp"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded border border-[#d6d3d1] bg-white text-[#44403c] hover:bg-[#f5f5f4] px-3 py-1.5 font-medium transition flex items-center gap-1"
+                  >
+                    <span>📁</span>
+                    <span>Source Repo ↗</span>
+                  </a>
+                  <Link
+                    href="/editor/2026-11-anthropic-vp-vnp"
+                    className="rounded bg-[#1c1917] hover:bg-black text-white px-4 py-1.5 font-semibold transition"
+                  >
+                    Open in Living Computable Editor →
+                  </Link>
+                </div>
+              </div>
+            </article>
+
+            {/* Third Preprint: 5-Gene Dementia Paper */}
             <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
                 <div className="flex items-center gap-2">

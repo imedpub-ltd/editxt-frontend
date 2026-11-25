@@ -872,11 +872,11 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
 export const VP_VNP_DOCUMENT: ComputableDocument = {
   id: '2026-11-anthropic-vp-vnp',
   title:
-    'Independent TCB, Statement-Fidelity, and Static Soundness Audit of the Formalized VP ≠ VNP Proof Claim',
+    'Independent TCB, Statement-Fidelity, and Kernel Verification Audit of the Formalized VP ≠ VNP Proof Claim',
   targetVenue: 'preprints',
-  status: 'STATIC_AND_TCB_AUDITED',
+  status: 'KERNEL_CHECKED_AND_FRESH_REPLAYED',
   isFinished: true,
-  statusNotice: '🔬 SEGUNDO CASO COMPARATIVO (anthropics/formal-math/vp-vnp): Auditoría estática, de grafo DAG y de fidelidad del TCB (153 líneas) completada sobre 324 archivos (72.932 líneas). Pendiente de replay en Mac Studio.',
+  statusNotice: '✓ MULTI-KERNEL VERIFICADO EN MAC STUDIO (anthropics/formal-math/vp-vnp): lake build Solution (404s, 9.027 jobs, exit 0) + #print axioms ([propext, Classical.choice, Quot.sound], SHA-256 84745c76...) + leanchecker --fresh Solution (996s, exit 0) + lean4lean Solution (14s, 7 decls, exit 0) + TCB de 153 líneas auditado.',
   epistemicPassport: {
     provenance: {
       origin: 'ai_autonomous',
@@ -885,9 +885,9 @@ export const VP_VNP_DOCUMENT: ComputableDocument = {
       orcid: '0000-0002-1825-0097'
     },
     formalVerification: {
-      status: 'static_audited',
-      label: 'Static & DAG Audited (Mac Studio Build Pending)',
-      summary: '324 .lean files (72,932 lines), 3,242 thms/lemmas, 0 sorry in 322 active-cone files; Mac Studio kernel replay queued'
+      status: 'multi_kernel',
+      label: 'Mac Studio Build (404s) + --fresh (996s) + lean4lean (14s)',
+      summary: '9,027 jobs built (404s); 5 root theorems [propext, Classical.choice, Quot.sound]; leanchecker --fresh (996s); lean4lean Solution (14s, 7 decls)'
     },
     statementTcb: {
       statementLines: 153,

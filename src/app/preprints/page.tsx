@@ -227,8 +227,8 @@ export default function PreprintsPage() {
                   <span className="font-mono text-[#44403c]">Version 1.0 (Audit)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
-                    <span>🔬</span> Static + TCB Audited (Mac Studio Replay Queued)
+                  <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
+                    <span>✓</span> Build (404s) + --fresh (996s) + lean4lean (14s)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
                     324 files · 72,932 lines
@@ -237,14 +237,14 @@ export default function PreprintsPage() {
               </div>
 
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1c1917] leading-snug">
-                Independent TCB, Statement-Fidelity, and Static Soundness Audit of the Formalized VP ≠ VNP Proof Claim
+                Independent TCB, Statement-Fidelity, and Kernel Verification Audit of the Formalized VP ≠ VNP Proof Claim
               </h2>
 
               <div className="mt-2 text-xs font-semibold text-[#1c1917]">
                 Manuel Menéndez-González (Independent Audit of Claude / Anthropic <code className="text-[11px]">hexagon:2611.00954v1</code>)
               </div>
               <div className="text-[11px] text-[#78716c] italic mt-0.5">
-                Lean v4.33.1 · 324 .lean files (322 active cone) · 3,242 thms/lemmas · 0 sorry in active cone · Statement.lean (98 lines) + Solution.lean (55 lines) TCB audited
+                Apple M4 Max · Lean v4.33.1 · build: 404s · --fresh: 996s · lean4lean: 14s (7 decls) · [propext, Classical.choice, Quot.sound] · 153-line TCB
               </div>
 
               {/* 4-Axis Epistemic Passport */}
@@ -253,9 +253,9 @@ export default function PreprintsPage() {
                   <div className="text-[10px] font-bold uppercase text-[#78716c]">1. Provenance</div>
                   <div className="font-semibold text-[#1c1917] mt-0.5">AI-Autonomous + Human TCB</div>
                 </div>
-                <div className="rounded border border-amber-200 bg-amber-50/60 p-2.5">
-                  <div className="text-[10px] font-bold uppercase text-amber-800">2. Verification</div>
-                  <div className="font-semibold text-amber-950 mt-0.5">Static OK (Kernel Queued)</div>
+                <div className="rounded border border-emerald-200 bg-emerald-50/60 p-2.5">
+                  <div className="text-[10px] font-bold uppercase text-emerald-800">2. Verification</div>
+                  <div className="font-semibold text-emerald-950 mt-0.5">Build + --fresh + lean4lean</div>
                 </div>
                 <div className="rounded border border-indigo-200 bg-indigo-50/50 p-2.5">
                   <div className="text-[10px] font-bold uppercase text-indigo-800">3. Statement TCB</div>

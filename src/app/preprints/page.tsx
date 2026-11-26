@@ -108,23 +108,23 @@ export default function PreprintsPage() {
         <main className="mx-auto max-w-6xl px-6 py-8">
           <div className="space-y-6">
 
-            {/* First Lead Preprint: Alpöge Riemann Hypothesis (v1.1.1) */}
+            {/* First Lead Preprint: Alpöge Riemann Hypothesis (v1.2) */}
             <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold uppercase tracking-wider text-purple-800 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded">
                     Theoretical Metascience &amp; Automated Reasoning
                   </span>
-                  <span>Posted: November 24, 2026</span>
+                  <span>Posted: November 26, 2026</span>
                   <span>·</span>
-                  <span className="font-mono text-[#44403c]">Version 1.1.2</span>
+                  <span className="font-mono text-[#44403c]">Version 1.2</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
-                    <span>✓</span> Lean 4 Build + --fresh (26,898s) + lean4lean (28,357/175,187)
+                    <span>✓</span> Lean 4 Build + --fresh (26,898s) + lean4lean 100% (175,187/175,187)
                   </span>
                   <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded text-[11px] font-mono">
-                    sha256:b302...cb51
+                    sha256:2a12...5a14
                   </span>
                 </div>
               </div>
@@ -137,17 +137,17 @@ export default function PreprintsPage() {
                 Manuel Menéndez-González
               </div>
               <div className="text-[11px] text-[#78716c] italic mt-0.5">
-                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · Full build: 127,812s · Fresh replay: 26,898s · Bounded-RAM lean4lean: 28,357/175,187 modules (616,173 decls, 0 failures) · 28-line TCB
+                Certified on Apple M4 Max (16-core, 64 GB RAM, 98 GB build footprint) · Full build: 127,812s · Fresh replay: 26,898s · Full lean4lean: 175,187/175,187 modules (1,927,488 decls, 0 failures, 204,972.82s) · 28-line TCB
               </div>
 
               {/* Cognitive Opacity Tools Showcase */}
               <div className="mt-4 rounded border border-emerald-200 bg-emerald-50/50 p-4 text-xs text-emerald-950 space-y-2">
                 <div className="font-bold flex items-center gap-1.5 text-emerald-900">
                   <span>🌐</span>
-                  <span>Comprensión Humana de la Prueba y de su Verificación Formal (v1.1.1):</span>
+                  <span>Comprensión Humana de la Prueba y de su Verificación Formal (v1.2):</span>
                 </div>
                 <p className="text-[#44403c] leading-relaxed">
-                  Traduce el sentido matemático y epistemológico de la RH (cancelación determinista óptima y necesidad combinatoria frente a límites físicos de instanciación y cruces de Littlewood/Skewes), desglosa la <strong>Anatomía de la Confianza Formal</strong>, documenta el barrido acotado en RAM con <em>lean4lean</em> (incluyendo los 5 módulos densos <code>decide +kernel</code>), aporta 4 salvaguardas metodológicas (Sec. 7.1) e integra el <strong>Explorador Interactivo D3</strong> y la <strong>Escalera de Comprensión en 3 Niveles</strong>.
+                  Traduce el sentido matemático y epistemológico de la RH (cancelación determinista óptima y necesidad combinatoria frente a límites físicos de instanciación y cruces de Littlewood/Skewes), desglosa la <strong>Anatomía de la Confianza Formal</strong>, completa el cierre 100% en RAM acotada con <em>lean4lean</em> (<code>175.187/175.187</code> módulos, <code>1.927.488</code> declaraciones, <code>0</code> fallos en <code>204.972,82s</code>, incluyendo los <code>17</code> módulos de fuel elevado), aporta 4 salvaguardas metodológicas (Sec. 7.1) e integra el <strong>Explorador Interactivo D3</strong> y la <strong>Escalera de Comprensión en 3 Niveles</strong>.
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ export default function PreprintsPage() {
                 </div>
                 <div className="rounded border border-emerald-200 bg-emerald-50/60 p-2.5">
                   <div className="text-[10px] font-bold uppercase text-emerald-800">2. Verification</div>
-                  <div className="font-semibold text-emerald-950 mt-0.5">Build + --fresh + lean4lean</div>
+                  <div className="font-semibold text-emerald-950 mt-0.5">Build + --fresh + lean4lean 100%</div>
                 </div>
                 <div className="rounded border border-indigo-200 bg-indigo-50/50 p-2.5">
                   <div className="text-[10px] font-bold uppercase text-indigo-800">3. Statement TCB</div>
@@ -175,12 +175,12 @@ export default function PreprintsPage() {
               <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href="https://doi.org/10.5281/zenodo.24510649"
+                    href="https://doi.org/10.5281/zenodo.24555893"
                     target="_blank"
                     rel="noreferrer"
                     className="font-mono bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-emerald-800 hover:bg-emerald-100 transition"
                   >
-                    DOI: 10.5281/zenodo.24510649 ↗
+                    DOI: 10.5281/zenodo.24555893 ↗
                   </a>
                   <span className="text-[#a8a29e]">·</span>
                   <span className="text-[#78716c]">Epistemia: 0.245 vs. 0.850</span>

@@ -489,7 +489,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO v1.1.2 (DOI: 10.5281/zenodo.24510649): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + barrido acotado en RAM con lean4lean (28.357 / 175.187 módulos, 616.173 decls, 0 fallos).',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.2 (DOI: 10.5281/zenodo.24555893): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + cierre completo 100% con lean4lean (175.187/175.187 módulos, 1.927.488 decls, 0 fallos en 204.972,82s).',
   epistemicPassport: {
     provenance: {
       origin: 'mixed',
@@ -498,9 +498,9 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       orcid: '0000-0002-1825-0097'
     },
     formalVerification: {
-      status: 'fresh_replay',
-      label: 'Lean 4 Build + --fresh Replay + lean4lean Streaming',
-      summary: '175,187 modules built (127,812s) + --fresh replay (26,898s) + 28,357/175,187 lean4lean modules (0 failures)'
+      status: 'multi_kernel',
+      label: 'Lean 4 Build + --fresh Replay + Full lean4lean (100%)',
+      summary: '175,187 modules built (127,812s) + --fresh replay (26,898s) + full 175,187/175,187 lean4lean replay (1,927,488 decls, 0 failures in 204,972.82s)'
     },
     statementTcb: {
       statementLines: 28,
@@ -576,7 +576,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
         {
           kind: 'text',
           text:
-            ', ruling out .olean corruption, environment hacking, and metaprogramming bypasses under Lean v4.33.1. Only an independent external Rust second kernel (nanoda / lean4export stalled at 46.47 GB on 64 GB RAM) remains open locally.'
+            ', ruling out .olean corruption, environment hacking, and metaprogramming bypasses under Lean v4.33.1. Bounded-RAM module-by-module lean4lean (commit 67f63b0c) subsequently cleared all 175,187 / 175,187 project modules and 1,927,488 declarations with 0 failures in 204,972.82 seconds (56 h 56 min 13 s; 175,170 default + 17 elevated-fuel modules, SHA-256 2a127531...); only clean-room monolithic flat-export replay (nanoda / lean4export stalled at 46.47 GB toward 61.57 GB on 64 GB RAM) remains open locally.'
         }
       ]
     },

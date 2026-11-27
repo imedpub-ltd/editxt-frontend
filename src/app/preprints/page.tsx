@@ -108,16 +108,16 @@ export default function PreprintsPage() {
         <main className="mx-auto max-w-6xl px-6 py-8">
           <div className="space-y-6">
 
-            {/* First Lead Preprint: Alpöge Riemann Hypothesis (v1.2) */}
+            {/* First Lead Preprint: Alpöge Riemann Hypothesis (v1.3) */}
             <article className="rounded-lg border border-[#e7e5e4] bg-white p-6 shadow-sm hover:border-[#d6d3d1] transition">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#78716c] mb-3">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold uppercase tracking-wider text-purple-800 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded">
                     Theoretical Metascience &amp; Automated Reasoning
                   </span>
-                  <span>Posted: November 26, 2026</span>
+                  <span>Posted: November 27, 2026</span>
                   <span>·</span>
-                  <span className="font-mono text-[#44403c]">Version 1.2</span>
+                  <span className="font-mono text-[#44403c]">Version 1.3</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
@@ -144,10 +144,10 @@ export default function PreprintsPage() {
               <div className="mt-4 rounded border border-emerald-200 bg-emerald-50/50 p-4 text-xs text-emerald-950 space-y-2">
                 <div className="font-bold flex items-center gap-1.5 text-emerald-900">
                   <span>🌐</span>
-                  <span>Comprensión Humana de la Prueba y de su Verificación Formal (v1.2):</span>
+                  <span>Rigor Metodológico y Autocontención Formal (v1.3):</span>
                 </div>
                 <p className="text-[#44403c] leading-relaxed">
-                  Traduce el sentido matemático y epistemológico de la RH (cancelación determinista óptima y necesidad combinatoria frente a límites físicos de instanciación y cruces de Littlewood/Skewes), desglosa la <strong>Anatomía de la Confianza Formal</strong>, completa el cierre 100% en RAM acotada con <em>lean4lean</em> (<code>175.187/175.187</code> módulos, <code>1.927.488</code> declaraciones, <code>0</code> fallos en <code>204.972,82s</code>, incluyendo los <code>17</code> módulos de fuel elevado), aporta 4 salvaguardas metodológicas (Sec. 7.1) e integra el <strong>Explorador Interactivo D3</strong> y la <strong>Escalera de Comprensión en 3 Niveles</strong>.
+                  Reproduce verbatim la especificación externa de 28 líneas y la traza <code>#print axioms</code>, enumera los <code>17</code> módulos con fuel elevado y las fronteras sobre <code>Mathlib</code> precompilado en el cierre <code>175.187/175.187</code> de <em>lean4lean</em> (<code>204.972,82s</code>), separa hubs de interfaz de 0 teoremas de los cuellos deductivos, formula las ecuaciones cerradas de <strong>Epistemia</strong> (con invariancia ordinal ante pesos) e integra el <strong>Explorador Interactivo D3</strong> y la <strong>Escalera en 3 Niveles</strong>.
                 </p>
               </div>
 
@@ -175,12 +175,12 @@ export default function PreprintsPage() {
               <div className="mt-5 pt-4 border-t border-[#f5f5f4] flex flex-wrap items-center justify-between gap-4 text-xs">
                 <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href="https://doi.org/10.5281/zenodo.24555893"
+                    href="https://doi.org/10.5281/zenodo.24581109"
                     target="_blank"
                     rel="noreferrer"
                     className="font-mono bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-emerald-800 hover:bg-emerald-100 transition"
                   >
-                    DOI: 10.5281/zenodo.24555893 ↗
+                    DOI: 10.5281/zenodo.24581109 ↗
                   </a>
                   <span className="text-[#a8a29e]">·</span>
                   <span className="text-[#78716c]">Epistemia: 0.245 vs. 0.850</span>

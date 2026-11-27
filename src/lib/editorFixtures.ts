@@ -489,7 +489,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO v1.2 (DOI: 10.5281/zenodo.24555893): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + cierre completo 100% con lean4lean (175.187/175.187 módulos, 1.927.488 decls, 0 fallos en 204.972,82s).',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.3 (DOI: 10.5281/zenodo.24581109): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + cierre 100% lean4lean (175.187/175.187 módulos, 17 módulos fuel elevado), TCB 28 líneas verbatim y ecuaciones cerradas de Epistemia.',
   epistemicPassport: {
     provenance: {
       origin: 'mixed',
@@ -796,13 +796,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   ],
   reviewFindings: [
     {
-      id: 'rf-fresh-replay-v1-2',
+      id: 'rf-fresh-replay-v1-3',
       severity: 'minor',
       resolved: true,
       targetBlockId: 'dual-cert',
       reviewerId: 'Editorial-Oversight-Committee',
       description:
-        'v1.2 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, exit_code=0, SHA-256 ff8ea3d0...) + full-archive lean4lean 175,187/175,187 (1,927,488 decls, 0 failures in 204,972.82s, SHA-256 2a127531...) passed. Clean-room flat-export nanoda 64 GB boundary transparently documented.'
+        'v1.3 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, SHA-256 ff8ea3d0...) + full lean4lean 175,187/175,187 (SHA-256 2a127531..., 17 elevated-fuel modules enumerated). Self-contained 28-line TCB, #print axioms, precompiled-Mathlib trust boundaries, 0-theorem hub separation, and closed-form Epistemia index published at 10.5281/zenodo.24581109.'
     }
   ],
   citations: [

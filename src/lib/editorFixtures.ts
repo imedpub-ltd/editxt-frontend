@@ -790,19 +790,19 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
       auditorAgent: 'Leanchecker-Fresh-Replay-Auditor',
       targetSpan: '26,898 seconds (7 h 28 min 18 s)',
       explanation:
-        'KERNEL_CHECKED_AND_FRESH_REPLAYED_V4_33_1: lake env leanchecker --fresh Main completed with exit_code=0 from mkEmptyEnvironment (SHA-256 ff8ea3d0...), ruling out .olean corruption and environment hacking. External Rust kernel (nanoda) remains open locally due to 46.47 GB export memory ceiling on 64 GB RAM.',
-      replacementText: 'Transitive fresh replay confirmed (26,898s, exit_code=0); external Rust second kernel noted as local 64 GB hardware limit.'
+        'KERNEL_CHECKED_FRESH_REPLAYED_AND_FULL_LEAN4LEAN_V4_33_1: lake env leanchecker --fresh Main completed with exit_code=0 from mkEmptyEnvironment (SHA-256 ff8ea3d0...) and bounded-RAM lean4lean@67f63b0c cleared all 175,187/175,187 modules (1,927,488 declarations, 0 failures in 204,972.82s; SHA-256 2a127531...). Clean-room flat-export replay (nanoda) remains open locally due to 46.47 GB export memory ceiling on 64 GB RAM.',
+      replacementText: 'Transitive fresh replay (26,898s, exit_code=0) + full 175,187/175,187 lean4lean replay (204,972.82s, 0 failures) confirmed; clean-room flat-export second kernel noted as local 64 GB hardware limit.'
     }
   ],
   reviewFindings: [
     {
-      id: 'rf-fresh-replay-v1-1',
+      id: 'rf-fresh-replay-v1-2',
       severity: 'minor',
       resolved: true,
       targetBlockId: 'dual-cert',
       reviewerId: 'Editorial-Oversight-Committee',
       description:
-        'v1.1 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, exit_code=0, SHA-256 ff8ea3d0...) passed. External nanoda 64 GB boundary transparently documented.'
+        'v1.2 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, exit_code=0, SHA-256 ff8ea3d0...) + full-archive lean4lean 175,187/175,187 (1,927,488 decls, 0 failures in 204,972.82s, SHA-256 2a127531...) passed. Clean-room flat-export nanoda 64 GB boundary transparently documented.'
     }
   ],
   citations: [

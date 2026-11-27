@@ -489,7 +489,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO v1.3 (DOI: 10.5281/zenodo.24581109): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + cierre 100% lean4lean (175.187/175.187 módulos, 17 módulos fuel elevado), TCB 28 líneas verbatim y ecuaciones cerradas de Epistemia.',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.3.1 (DOI: 10.5281/zenodo.24582466): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + cierre 100% lean4lean (175.187/175.187 módulos, 17 módulos fuel elevado), TCB Unicode 28 líneas, 125.723 módulos únicos en motivos y ecuaciones cerradas de Epistemia.',
   epistemicPassport: {
     provenance: {
       origin: 'mixed',
@@ -796,13 +796,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   ],
   reviewFindings: [
     {
-      id: 'rf-fresh-replay-v1-3',
+      id: 'rf-fresh-replay-v1-3-1',
       severity: 'minor',
       resolved: true,
       targetBlockId: 'dual-cert',
       reviewerId: 'Editorial-Oversight-Committee',
       description:
-        'v1.3 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, SHA-256 ff8ea3d0...) + full lean4lean 175,187/175,187 (SHA-256 2a127531..., 17 elevated-fuel modules enumerated). Self-contained 28-line TCB, #print axioms, precompiled-Mathlib trust boundaries, 0-theorem hub separation, and closed-form Epistemia index published at 10.5281/zenodo.24581109.'
+        'v1.3.1 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, SHA-256 ff8ea3d0...) + full lean4lean 175,187/175,187 (SHA-256 2a127531..., 17 elevated-fuel modules enumerated). XeLaTeX bit-exact Unicode 28-line TCB, #print axioms, 125,723 unique motif modules (151,457 overlapping hits; 49,464 unmatched), complete 64-hex SHA-256 pinning, and closed-form Epistemia glossary published at 10.5281/zenodo.24582466.'
     }
   ],
   citations: [

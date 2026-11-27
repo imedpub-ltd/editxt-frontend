@@ -489,7 +489,7 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   targetVenue: 'preprints',
   status: 'CERTIFIED_PREPRINT',
   isFinished: true,
-  statusNotice: '✓ PREPRINT CERTIFICADO v1.3.1 (DOI: 10.5281/zenodo.24582466): Compilación limpia en Apple M4 Max (127.812s) + replay transitivo --fresh (26.898s) + cierre 100% lean4lean (175.187/175.187 módulos, 17 módulos fuel elevado), TCB Unicode 28 líneas, 125.723 módulos únicos en motivos y ecuaciones cerradas de Epistemia.',
+  statusNotice: '✓ PREPRINT CERTIFICADO v1.4 (DOI: 10.5281/zenodo.24586394): Compilación limpia en Apple M4 Max (127.812s) + --fresh (26.898s) + cierre 100% lean4lean (175.187/175.187), TCB Unicode 28 líneas y auditoría cruzada empírica de Fase 2 (RH-Alpoge-Reconstruction b50dae1).',
   epistemicPassport: {
     provenance: {
       origin: 'mixed',
@@ -796,13 +796,13 @@ export const ALPOGE_RH_DOCUMENT: ComputableDocument = {
   ],
   reviewFindings: [
     {
-      id: 'rf-fresh-replay-v1-3-1',
+      id: 'rf-fresh-replay-v1-4',
       severity: 'minor',
       resolved: true,
       targetBlockId: 'dual-cert',
       reviewerId: 'Editorial-Oversight-Committee',
       description:
-        'v1.3.1 certificate verified: lake build Main (127,812s) + lake env leanchecker --fresh Main (26,898s, SHA-256 ff8ea3d0...) + full lean4lean 175,187/175,187 (SHA-256 2a127531..., 17 elevated-fuel modules enumerated). XeLaTeX bit-exact Unicode 28-line TCB, #print axioms, 125,723 unique motif modules (151,457 overlapping hits; 49,464 unmatched), complete 64-hex SHA-256 pinning, and closed-form Epistemia glossary published at 10.5281/zenodo.24582466.'
+        'v1.4 certificate verified: Phase 1 (lake build 127,812s + leanchecker --fresh 26,898s + full lean4lean 175,187/175,187, SHA-256 2a127531...) paired with Phase 2 cross-audit of RH-Alpoge-Reconstruction@b50dae1 (148 passage-ledger rows vs 40e56ba, 12/453 total & 8/345 proof-bearing links, 0 rows in ReciprocityTheory, 12/12 MECHANISM_PACKAGED, 29 omissions, 0/20 V1..V20 reconciled, and pending refactor check onto lsernau/grh-lean@72fead1) published at 10.5281/zenodo.24586394.'
     }
   ],
   citations: [
